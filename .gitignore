@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SQLite Databases
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Coverage / Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build Artifacts
+build/
+dist/
+*.egg-info/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Model Files (optional)
+models/*.pkl
+models/*.joblib
+
+# Temporary Files
+tmp/
+temp/
+
+# Cache
+.cache/
+
+# FastAPI/Uvicorn
+*.pid
+
+# mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Data Files (if large)
+data/raw/
+data/processed/
