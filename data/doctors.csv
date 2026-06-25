@@ -1,0 +1,11 @@
+doctor_id,doc_name,department,specialty,day_of_week,time_slot,is_available
+1,Dr.Jack Bedi,General Medicine,General Physician,Tuesday,14:00-15:00,True
+2,Dr.Dayamai Gokhale,ENT,ENT Specialist,Friday,14:00-15:00,True
+3,Dr.Prisha Dhawan,Pulmonology,Pulmonologist,Tuesday,09:00-10:00,True
+4,Dr.Samarth Badami,General Medicine,General Physician,Wednesday,11:00-12:00,True
+5,Dr.Baghyawati Shan,Neurology,Neurologist,Monday,11:00-12:00,False
+6,Dr.Rohan Thakkar,General Medicine,General Physician,Wednesday,11:00-12:00,True
+7,Dr.Tanish Prabhakar,General Medicine,General Physician,Saturday,10:00-11:00,True
+8,Dr.Falan Saini,Pediatrics,Pediatrician,Monday,15:00-16:00,True
+9,Dr.Ladli Bir,ENT,ENT Specialist,Thursday,10:00-11:00,True
+10,Dr.Meghana Baria,Dermatology,Dermatologist,Monday,09:00-10:00,True
