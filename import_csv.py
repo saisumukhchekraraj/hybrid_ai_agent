@@ -44,19 +44,21 @@ def import_doctors():
     ) as file:
         reader = csv.DictReader(file)
         for row in reader:
+            is_available = row["is_available"].strip().lower() == "true"
             cursor.execute(
                 """
                 INSERT INTO doctor_records (
+                    doctor_id,
                     doc_name,
                     department,
                     specialty,
                     day_of_week,
                     time_slot,
                     is_available
-                ) VALUES (?, ?, ?, ?, ?, ?)
+                ) VALUES (?,?, ?, ?, ?, ?, ?)
                 """,
-                (row["doc_name"], row["department"], row["specialty"],
-                 row["day_of_week"], row["time_slot"], row["is_available"])
+                (row["doctor_id"],row["doc_name"], row["department"], row["specialty"],
+                 row["day_of_week"], row["time_slot"], is_available)
             )
         conn.commit()
         conn.close()
