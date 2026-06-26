@@ -5,8 +5,8 @@ from app.data_generator import (
     generate_doctor,
     generate_appointment
 )
-TOTAL_PATIENTS = 50
-TOTAL_DOCTORS = 10
+TOTAL_PATIENTS = 500
+TOTAL_DOCTORS = 50
 TOTAL_APPOINTMENTS = 15
 
 patients = []
