@@ -1,51 +1,51 @@
 doctor_id,doc_name,department,specialty,day_of_week,time_slot,is_available
-1,Dr.Bimala Char,Pulmonology,Pulmonologist,Thursday,14:00-15:00,True
-2,Dr.Teerth Pai,Orthopedics,Orthopedic Surgeon,Friday,11:00-12:00,True
-3,Dr.Omisha Gokhale,Orthopedics,Orthopedic Surgeon,Thursday,11:00-12:00,True
-4,Dr.Triveni Chandra,Pediatrics,Pediatrician,Tuesday,11:00-12:00,True
-5,Dr.Yashvi Bir,ENT,ENT Specialist,Thursday,15:00-16:00,False
-6,Dr.Gaurika Handa,Cardiology,Cardiologist,Tuesday,15:00-16:00,True
-7,Dr.Yashodhara Chaudhary,Cardiology,Cardiologist,Tuesday,14:00-15:00,True
-8,Dr.Sneha Dubey,Pediatrics,Pediatrician,Tuesday,15:00-16:00,False
-9,Dr.Nisha Tripathi,Dermatology,Dermatologist,Friday,14:00-15:00,True
-10,Dr.Pavani Kala,ENT,ENT Specialist,Wednesday,14:00-15:00,False
-11,Dr.Kamya Dyal,Neurology,Neurologist,Monday,11:00-12:00,False
-12,Dr.Anusha Krishnamurthy,Orthopedics,Orthopedic Surgeon,Wednesday,14:00-15:00,True
-13,Dr.Yatin Virk,Neurology,Neurologist,Saturday,10:00-11:00,False
-14,Dr.Aadi Ram,Orthopedics,Orthopedic Surgeon,Thursday,15:00-16:00,True
-15,Dr.Lohit Sidhu,Pulmonology,Pulmonologist,Wednesday,11:00-12:00,False
-16,Dr.Faraj Jha,Pediatrics,Pediatrician,Monday,09:00-10:00,True
-17,Dr.Ucchal Kadakia,Pediatrics,Pediatrician,Wednesday,15:00-16:00,True
-18,Dr.Xalak Chana,Orthopedics,Orthopedic Surgeon,Thursday,09:00-10:00,False
-19,Dr.Caleb Pingle,Orthopedics,Orthopedic Surgeon,Tuesday,10:00-11:00,True
-20,Dr.Tarak Sagar,Cardiology,Cardiologist,Wednesday,10:00-11:00,True
-21,Dr.Warhi Agrawal,Cardiology,Cardiologist,Friday,14:00-15:00,False
-22,Dr.Darika Kanda,Orthopedics,Orthopedic Surgeon,Thursday,11:00-12:00,True
-23,Dr.Yatan Gokhale,Cardiology,Cardiologist,Tuesday,10:00-11:00,True
-24,Dr.Radha Roy,Pediatrics,Pediatrician,Thursday,14:00-15:00,False
-25,Dr.Mohammed Chhabra,Neurology,Neurologist,Friday,10:00-11:00,True
-26,Dr.Hiral Pal,Neurology,Neurologist,Wednesday,10:00-11:00,False
-27,Dr.Nilima Bora,Pediatrics,Pediatrician,Friday,10:00-11:00,True
-28,Dr.Chakradev Thakur,Pediatrics,Pediatrician,Friday,14:00-15:00,False
-29,Dr.Jasmit Nath,ENT,ENT Specialist,Thursday,10:00-11:00,True
-30,Dr.Tejas Bassi,General Medicine,General Physician,Wednesday,11:00-12:00,False
-31,Dr.Om Bala,General Medicine,General Physician,Thursday,14:00-15:00,True
-32,Dr.Charita Lalla,Dermatology,Dermatologist,Friday,09:00-10:00,True
-33,Dr.Triya Rau,Cardiology,Cardiologist,Tuesday,14:00-15:00,True
-34,Dr.Tarak Johal,Neurology,Neurologist,Friday,10:00-11:00,False
-35,Dr.Baljiwan Sur,Orthopedics,Orthopedic Surgeon,Thursday,09:00-10:00,True
-36,Dr.Hiral Merchant,Pulmonology,Pulmonologist,Monday,14:00-15:00,True
-37,Dr.Tanmayi Kala,Orthopedics,Orthopedic Surgeon,Thursday,15:00-16:00,False
-38,Dr.Wriddhish Raval,ENT,ENT Specialist,Friday,10:00-11:00,True
-39,Dr.Varsha Bora,ENT,ENT Specialist,Wednesday,14:00-15:00,True
-40,Dr.Devika Bhatti,Orthopedics,Orthopedic Surgeon,Tuesday,09:00-10:00,True
-41,Dr.Sai Bhatt,Pulmonology,Pulmonologist,Friday,10:00-11:00,True
-42,Dr.Abeer Nagar,General Medicine,General Physician,Friday,11:00-12:00,True
-43,Dr.Sudiksha Bhandari,Pulmonology,Pulmonologist,Friday,15:00-16:00,False
-44,Dr.Abha Kar,Pediatrics,Pediatrician,Wednesday,11:00-12:00,False
-45,Dr.Hemani Ganesan,General Medicine,General Physician,Thursday,11:00-12:00,False
-46,Dr.Anirudh Kibe,ENT,ENT Specialist,Monday,10:00-11:00,False
-47,Dr.Shaurya Din,Dermatology,Dermatologist,Thursday,11:00-12:00,True
-48,Dr.Indrajit Sarraf,Dermatology,Dermatologist,Thursday,11:00-12:00,False
-49,Dr.Chatresh Hari,Dermatology,Dermatologist,Thursday,10:00-11:00,False
-50,Dr.Baljiwan Saini,Neurology,Neurologist,Friday,14:00-15:00,False
+1,Dr.Theodore Barman,Dermatology,Dermatologist,Monday,11:00-12:00,False
+2,Dr.Devika Bhardwaj,ENT,ENT Specialist,Saturday,10:00-11:00,True
+3,Dr.Divya Prabhu,ENT,ENT Specialist,Friday,15:00-16:00,False
+4,Dr.Zashil Sathe,Cardiology,Cardiologist,Tuesday,11:00-12:00,False
+5,Dr.Bimala Agate,Neurology,Neurologist,Wednesday,09:00-10:00,False
+6,Dr.Urmi Sathe,General Medicine,General Physician,Friday,14:00-15:00,False
+7,Dr.Naksh Doshi,Neurology,Neurologist,Monday,15:00-16:00,False
+8,Dr.Watika Deshmukh,Pediatrics,Pediatrician,Tuesday,10:00-11:00,True
+9,Dr.Victor Nath,ENT,ENT Specialist,Friday,10:00-11:00,False
+10,Dr.Chaaya Bajaj,General Medicine,General Physician,Monday,09:00-10:00,False
+11,Dr.Bhavika Bajaj,Neurology,Neurologist,Wednesday,14:00-15:00,True
+12,Dr.Lajita Bahl,Orthopedics,Orthopedic Surgeon,Monday,14:00-15:00,True
+13,Dr.Ekapad Cheema,Orthopedics,Orthopedic Surgeon,Wednesday,10:00-11:00,True
+14,Dr.Arya Mukhopadhyay,ENT,ENT Specialist,Wednesday,14:00-15:00,False
+15,Dr.Aditya Setty,Cardiology,Cardiologist,Thursday,11:00-12:00,False
+16,Dr.Jhalak Pandya,ENT,ENT Specialist,Friday,11:00-12:00,True
+17,Dr.Praneel Thaman,Neurology,Neurologist,Tuesday,15:00-16:00,False
+18,Dr.Rohan Shenoy,Pediatrics,Pediatrician,Wednesday,15:00-16:00,True
+19,Dr.Idika Mukherjee,General Medicine,General Physician,Friday,15:00-16:00,False
+20,Dr.Tamanna Nigam,Pediatrics,Pediatrician,Tuesday,09:00-10:00,True
+21,Dr.Lucky Khatri,Pulmonology,Pulmonologist,Monday,11:00-12:00,False
+22,Dr.Shivansh Guha,General Medicine,General Physician,Friday,11:00-12:00,False
+23,Dr.Nisha Sarin,Pediatrics,Pediatrician,Tuesday,14:00-15:00,False
+24,Dr.Zansi Magar,Cardiology,Cardiologist,Friday,09:00-10:00,False
+25,Dr.Laban Saha,ENT,ENT Specialist,Friday,11:00-12:00,True
+26,Dr.Nachiket Gara,General Medicine,General Physician,Wednesday,14:00-15:00,False
+27,Dr.Lohit Dyal,Orthopedics,Orthopedic Surgeon,Friday,10:00-11:00,False
+28,Dr.Utkarsh Halder,Orthopedics,Orthopedic Surgeon,Monday,11:00-12:00,False
+29,Dr.Waida Saraf,Dermatology,Dermatologist,Wednesday,11:00-12:00,False
+30,Dr.Nathaniel Batra,Dermatology,Dermatologist,Friday,14:00-15:00,False
+31,Dr.Oscar Vora,Pulmonology,Pulmonologist,Monday,11:00-12:00,True
+32,Dr.Tejas More,Orthopedics,Orthopedic Surgeon,Friday,11:00-12:00,False
+33,Dr.Parth Pathak,Pulmonology,Pulmonologist,Friday,14:00-15:00,False
+34,Dr.Indrajit Shukla,Dermatology,Dermatologist,Friday,15:00-16:00,True
+35,Dr.Dhruv Dugar,Orthopedics,Orthopedic Surgeon,Tuesday,11:00-12:00,False
+36,Dr.Avi Rai,Orthopedics,Orthopedic Surgeon,Saturday,10:00-11:00,False
+37,Dr.Dominic Gola,Pediatrics,Pediatrician,Friday,15:00-16:00,True
+38,Dr.George Dua,Neurology,Neurologist,Monday,10:00-11:00,True
+39,Dr.Orinder Dugal,Neurology,Neurologist,Monday,10:00-11:00,False
+40,Dr.Megha Desai,Pulmonology,Pulmonologist,Wednesday,14:00-15:00,True
+41,Dr.Omkaar Gala,Pediatrics,Pediatrician,Saturday,14:00-15:00,True
+42,Dr.Rajata Brar,Dermatology,Dermatologist,Monday,11:00-12:00,True
+43,Dr.Harrison Tak,Neurology,Neurologist,Tuesday,11:00-12:00,True
+44,Dr.Arunima Chokshi,Neurology,Neurologist,Wednesday,10:00-11:00,True
+45,Dr.Anusha Shroff,Dermatology,Dermatologist,Monday,10:00-11:00,False
+46,Dr.Vrinda Sethi,Neurology,Neurologist,Friday,10:00-11:00,False
+47,Dr.Sai Nagi,Neurology,Neurologist,Saturday,11:00-12:00,True
+48,Dr.Priya Kunda,Neurology,Neurologist,Monday,14:00-15:00,True
+49,Dr.Nidra More,Cardiology,Cardiologist,Thursday,15:00-16:00,False
+50,Dr.Forum Rai,Orthopedics,Orthopedic Surgeon,Thursday,15:00-16:00,True
