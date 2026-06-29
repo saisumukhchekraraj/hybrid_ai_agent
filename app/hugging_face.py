@@ -1,29 +1,40 @@
-from transformers import AutoTokenizer
-from transformers import AutoModelForCausalLM
+from transformers import (
+    AutoTokenizer,
+    AutoModelForSeq2SeqLM
+)
 
 import torch
-MODEL_NAME = "distilgpt2"
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
-def generate_sentence(prompt):
-    inputs = tokenizer(
+MODEL_NAME = "google/flan-t5-base"
+tokenizer = AutoTokenizer.from_pretrained(
+    MODEL_NAME
+)
+model = AutoModelForSeq2SeqLM.from_pretrained(
+    MODEL_NAME
+)
+model.eval()
+prompt =  "Generate a realistic patient complaint for orthopedic pain in knees"
+print(MODEL_NAME)
+print(prompt)
+
+inputs = tokenizer(
     prompt,
     return_tensors="pt"
 )
-    output = model.generate(
+outputs = model.generate(
     **inputs,
-    max_new_tokens=30,
-    do_sample=True,
-    temperature=0.8,
-    top_p=0.95
+    max_new_tokens=16,
+    num_beams=4,
+    do_sample=False,
+    early_stopping=True
 )
-    sentence = tokenizer.decode(
-    output[0],
+response = tokenizer.decode(
+    outputs[0],
     skip_special_tokens=True
 )
-    return sentence
-if __name__ == "__main__":
-
-    prompt = "Generate a patient complaint for booking an appointment with a doctor"
-
-    print(generate_sentence(prompt))
+print(response)
+print(outputs)
+print(tokenizer.decode(outputs[0], skip_special_tokens=False))
+print(model.config.architectures)
+print(model.config.model_type)
+print(tokenizer.__class__)
+print(model.__class__)
