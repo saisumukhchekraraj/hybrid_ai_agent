@@ -271,3 +271,20 @@ def get_available_doctor_slots(specialty, date):
         doc_slots.append(doctor_data)
     conn.close()        
     return doc_slots
+def doc_is_available(doctor_id, date, time):
+    day = date.strftime("%A")  
+    slots = get_weekday_slots(doctor_id, day)
+    if not any(slot["start_time"] == time for slot in slots):
+        return False
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT appointment_id
+        FROM appointment_records
+        WHERE doctor_id = ? AND appointment_date = ? AND appointment_time = ?
+    """, (doctor_id, date.strftime("%Y-%m-%d"), time))
+    appointment = cursor.fetchone()
+    conn.close()
+    if appointment:
+        return False
+    return True
