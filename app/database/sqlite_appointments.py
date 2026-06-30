@@ -1,9 +1,9 @@
 import sqlite3
 DATABASE_NAME = "hospital_records.db"
-from hybrid_ai_agent.app.database.sqlite_patients import patient_exists
-from hybrid_ai_agent.app.database.sqlite_docs import doctor_exists
-from hybrid_ai_agent.app.database.sqlite_docs import doc_is_available
-
+from app.database.sqlite_patients import patient_exists
+from app.database.sqlite_docs import doctor_exists
+from app.database.sqlite_docs import doc_is_available
+from datetime import datetime
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
     conn.row_factory = sqlite3.Row
@@ -14,7 +14,9 @@ def book_appointment(
     appointment_date,
     appointment_time
 ):
-   
+    
+    appointment_time = datetime.strptime(appointment_time, "%H:%M").strftime("%H:%M")
+
     if not patient_exists(patient_id):
         return {
             "success": False,
@@ -38,25 +40,25 @@ def book_appointment(
     cursor = conn.cursor()
 
     cursor.execute(
-        """
-        INSERT INTO appointment_records
-        (
-            patient_id,
-            doctor_id,
-            appointment_date,
-            appointment_time,
-            appointment_status
-        )
-        VALUES (?, ?, ?, ?, ?)
-        """,
-        (
-            patient_id,
-            doctor_id,
-            appointment_date,
-            appointment_time,
-            "Scheduled"
-        )
+    """
+    INSERT INTO appointment_records
+    (
+        patient_id,
+        doctor_id,
+        appointment_date,
+        appointment_time,
+        appointment_status
     )
+    VALUES (?, ?, ?, ?, ?)
+    """,
+    (
+        patient_id,
+        doctor_id,
+        appointment_date.isoformat(),
+        appointment_time,
+        "Scheduled"
+    )
+)
     appointment_id = cursor.lastrowid
    
     conn.commit()

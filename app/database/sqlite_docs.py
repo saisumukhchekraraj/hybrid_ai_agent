@@ -226,18 +226,18 @@ def get_available_doctor_slots(specialty, date):
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT
-        d.doctor_id,
-        d.doc_name,
-        s.start_time,
-        s.end_time,
-        s.slot_duration
-        FROM doctor_records d
-        JOIN doctor_schedule s
-        ON d.doctor_id = s.doctor_id
-        WHERE d.specialty = ?
-        AND s.weekday = ?
-            """, (specialty, day))
+    SELECT
+    d.doctor_id,
+    d.doc_name,
+    s.start_time,
+    s.end_time,
+    s.duration_minutes
+    FROM doctor_records d
+    JOIN doctor_schedule s
+    ON d.doctor_id = s.doctor_id
+    WHERE d.specialty = ?
+    AND s.day_of_week = ?
+        """, (specialty, day))
     doctors = cursor.fetchall()
 
     doc_slots = []

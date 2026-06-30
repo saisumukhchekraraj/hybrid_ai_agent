@@ -1,5 +1,5 @@
 import sqlite3
-DATABASE_NAME = "patients.db"
+DATABASE_NAME = "hospital_records.db"
 
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
@@ -179,7 +179,9 @@ def delete_patient(patient_id):
          WHERE patient_id = ?
          """, (patient_id,))
     conn.commit()
+    rows=cursor.rowcount
     conn.close()
+    return rows
 def patient_exists(patient_id):
     conn = get_connection()
     cursor = conn.cursor()

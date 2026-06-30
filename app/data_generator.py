@@ -33,7 +33,7 @@ SPECIALITIES = {
     "Pulmonology": "Pulmonologist",
     "General Medicine": "General Physician"
 }
-DAYS=["Monday","Truesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+DAYS=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 START_TIMES = [
     "08:00",
     "08:30",
@@ -165,7 +165,7 @@ def generate_appointment(appointment_number, total_patients, total_doctors):
     """Generates a random appointment record."""
     appointment_id = appointment_number
     appointment_date = fake.date_between(start_date="today", end_date="+30d").strftime("%Y-%m-%d")
-    appointment_time = f"{random.randint(8, 16)}:00"
+    appointment_time = f"{random.randint(8, 16):02d}:00"
     appointment_status = random.choice(["Scheduled", "Completed", "Cancelled"])
     appointment_record = {
         "appointment_id": appointment_id,

@@ -67,7 +67,7 @@ def import_doctor_schedules():
     cursor = conn.cursor()
 
     with open(
-        "data/doctor_schedule.csv",
+        "data/doctors_schedules.csv",
         "r",
         encoding="utf-8"
     ) as file:
