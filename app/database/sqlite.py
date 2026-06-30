@@ -1,7 +1,7 @@
 import sqlite3
 DATABASE_NAME = "hospital_records.db"
 
-
+from hybrid_ai_agent.app.database.sqlite_patients import patient_exists
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
     conn.row_factory = sqlite3.Row
@@ -48,145 +48,9 @@ def create_tables():
                   )""")
     conn.commit()
     conn.close()
-def find_patient(first_name, last_name, dob):
-    conn = get_connection()
-    cursor = conn.cursor()
-    cursor.execute(
-    """
-    SELECT patient_id
-    FROM patient_records
-    WHERE
-        first_name = ?
-        AND last_name = ?
-        AND dob = ?
-    LIMIT 1
-    """,
-    (first_name, last_name, dob)
-)
-    patient = cursor.fetchone()
-    conn.close()
-    if patient:
-     return patient["patient_id"]
 
-    return None
-def insert_patient(
-    first_name,
-    last_name,
-    dob,
-    gender,
-    phone,
-    email,
-    address,
-    insurance_company,
-    insurance_id
-): 
-   patient_id = find_patient(first_name, last_name, dob)
 
-   if patient_id:
-    return patient_id
-   else:
-    conn= get_connection()
-    cursor=conn.cursor()
-    cursor.execute("""
-       INSERT  INTO patient_records
-    (
-        first_name,
-        last_name,
-        dob,
-        gender,
-        phone,
-        email,
-        address,
-        insurance_company,
-        insurance_id
-    )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """,
-    (
-        first_name,
-        last_name,
-        dob,
-        gender,
-        phone,
-        email,
-        address,
-        insurance_company,
-        insurance_id
-    )
-)
-    conn.commit()
-    patient_id = cursor.lastrowid
-    conn.close()
-    return patient_id
-def get_available_doctors(specialty, day):
-    conn = get_connection()
-    cursor = conn.cursor()
 
-    cursor.execute(
-        """
-        SELECT
-            doctor_id,
-            doc_name,
-            specialty,
-            day_of_week,
-            time_slot
-        FROM doctor_records
-        WHERE
-            specialty = ?
-            AND day_of_week = ?
-            AND is_available = 1
-        """,
-        (specialty, day)
-    )
-
-    doctors = cursor.fetchall()
-
-    conn.close()
-
-    return [dict(doctor) for doctor in doctors]
-def patient_exists(patient_id):
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute(
-        """
-        SELECT patient_id
-        FROM patient_records
-        WHERE patient_id = ?
-        LIMIT 1
-        """,
-        (patient_id,)
-    )
-
-    patient = cursor.fetchone()
-
-    conn.close()
-
-    if patient:
-        return True
-
-    return False
-def doctor_exists(doctor_id):
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute(
-        """
-        SELECT
-            doctor_id,
-            is_available
-        FROM doctor_records
-        WHERE doctor_id = ?
-        LIMIT 1
-        """,
-        (doctor_id,)
-    )
-
-    doctor = cursor.fetchone()
-
-    conn.close()
-
-    return doctor
 def book_appointment(
     patient_id,
     doctor_id,
