@@ -30,10 +30,22 @@ def create_tables():
                       doc_name TEXT,
                       department TEXT,
                       specialty TEXT,
-                      day_of_week TEXT,
-                      time_slot TEXT,
-                      is_available BOOLEAN
+                      qualifications TEXT,
+                      phone TEXT,
+                      email TEXT,
+                      consultation_fee REAL
                   )
+ """)
+    cursor.execute("""
+                   CREATE TABLE IF NOT EXISTS doctor_schedule (
+                       schedule_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                       doctor_id INTEGER,
+                       day_of_week TEXT,
+                       start_time TEXT,
+                       end_time TEXT,
+                       duration_minutes INTEGER,
+                       FOREIGN KEY (doctor_id) REFERENCES doctor_records(doctor_id)
+                   )
  """)
     cursor.execute("""
                   CREATE TABLE IF NOT EXISTS appointment_records (
