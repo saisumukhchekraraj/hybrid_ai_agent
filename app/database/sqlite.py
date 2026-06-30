@@ -1,7 +1,6 @@
 import sqlite3
 DATABASE_NAME = "hospital_records.db"
 
-from hybrid_ai_agent.app.database.sqlite_patients import patient_exists
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
     conn.row_factory = sqlite3.Row
@@ -21,7 +20,8 @@ def create_tables():
             email TEXT,
             address TEXT,
             insurance_company TEXT,
-            insurance_id TEXT
+            insurance_id TEXT,
+            patient_complaint TEXT
         )
     ''')
     cursor.execute("""
@@ -32,8 +32,7 @@ def create_tables():
                       specialty TEXT,
                       qualifications TEXT,
                       phone TEXT,
-                      email TEXT,
-                      consultation_fee REAL
+                      email TEXT
                   )
  """)
     cursor.execute("""

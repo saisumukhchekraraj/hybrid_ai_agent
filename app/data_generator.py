@@ -1,8 +1,9 @@
 from faker import Faker
 import random
-
+from datetime import date
+from app.hugging_face import generate_complaint
 fake = Faker("en_IN")
-
+today= date.today()
 DEPARTMENTS = [
     "Cardiology",
     "Neurology",
@@ -32,19 +33,67 @@ SPECIALITIES = {
     "Pulmonology": "Pulmonologist",
     "General Medicine": "General Physician"
 }
-TIME_SLOTS = [
-    "09:00-10:00",
-    "10:00-11:00",
-    "11:00-12:00",
-    "14:00-15:00",
-    "15:00-16:00"
+DAYS=["Monday","Truesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+START_TIMES = [
+    "08:00",
+    "08:30",
+    "09:00",
+    "09:30",
+    "10:00",
+    "10:30",
+    "11:00"
 ]
+
+END_TIMES = [
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00"
+]
+doctor_qualifications = [
+    "MBBS",
+    "MBBS, MD",
+    "MBBS, MS",
+    "MBBS, DNB",
+    "MBBS, MD (General Medicine)",
+    "MBBS, MD (Cardiology)",
+    "MBBS, DM (Cardiology)",
+    "MBBS, MD (Neurology)",
+    "MBBS, DM (Neurology)",
+    "MBBS, MS (Orthopedics)",
+    "MBBS, MS (General Surgery)",
+    "MBBS, MCh (Neurosurgery)",
+    "MBBS, MCh (Urology)",
+    "MBBS, MD (Pediatrics)",
+    "MBBS, MD (Dermatology)",
+    "MBBS, MD (Psychiatry)",
+    "MBBS, MD (Radiology)",
+    "MBBS, MD (Anesthesiology)",
+    "MBBS, MD (Ophthalmology)",
+    "MBBS, MS (ENT)",
+    "MBBS, MD (Pulmonology)",
+    "MBBS, DM (Gastroenterology)",
+    "MBBS, MD (Nephrology)",
+    "MBBS, DM (Endocrinology)",
+    "MBBS, MD (Oncology)",
+    "MBBS, MD (Emergency Medicine)",
+    "MBBS, MD (Obstetrics & Gynecology)",
+    "MBBS, MD (Pathology)",
+    "MBBS, MD (Microbiology)",
+    "MBBS, MD (Community Medicine)"
+]
+DURATIONS = [15, 20, 30, 45]
 def generate_patient(patient_number): 
     """Generates a random patient record."""
     
     patient_id= patient_number
    
-    dob=fake.date_of_birth(minimum_age=0, maximum_age=90).strftime("%m/%d/%Y")
+    date_of_birth=fake.date_of_birth(minimum_age=0, maximum_age=90)
+    dob=date_of_birth.strftime("%Y-%m-%d")
+    age = today.year - date_of_birth.year - (
+    (today.month, today.day) < (date_of_birth.month, date_of_birth.day)
+)
     gender=random.choice(["male", "female"])
     if gender == "male":
         first_name = fake.first_name_male()
@@ -57,6 +106,7 @@ def generate_patient(patient_number):
     address=fake.address().replace("\n", ", ")
     insurance_company=random.choice(INSURANCE_COMPANIES)
     insurance_id=fake.bothify(text="??-??####").upper()
+    complaint= generate_complaint(age, gender)
     patient = { 
         
         "patient_id": patient_id,
@@ -68,32 +118,49 @@ def generate_patient(patient_number):
         "email": email,
         "address": address,
         "insurance_company": insurance_company,
-        "insurance_id": insurance_id
+        "insurance_id": insurance_id,
+        "patient_complaint": complaint
     }
     return patient
+
 def generate_doctor(doctor_number):
     """Generates a random doctor record."""
     doctor_id = doctor_number
     doc_name = f"Dr.{fake.first_name()} {fake.last_name()}"
-   
     department = random.choice(DEPARTMENTS)
     specialty = SPECIALITIES[department]
-    day_of_week = random.choice(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"])
- 
-
-    time_slot = random.choice(TIME_SLOTS)
-    is_available = random.choice([True, False])
+    qualifications= random.choice(doctor_qualifications)
+    email=fake.unique.email()
+    phone=fake.phone_number()
     doctor= {
         "doctor_id": doctor_id,
         "doc_name": doc_name,
         "department": department,
         "specialty": specialty,
-        "day_of_week": day_of_week,
-        "time_slot": time_slot,
-        "is_available": is_available
+        "qualifications":qualifications,
+        "email":email,
+        "phone":phone,
     }
     return doctor
+import random
 
+def generate_doc_schedule(doctor_id):
+    day_of_week = random.choice(DAYS)
+    start_time = random.choice(START_TIMES)
+    valid_end_times = [
+        end
+        for end in END_TIMES
+        if end > start_time
+    ]
+    end_time = random.choice(valid_end_times)
+    duration_minutes = random.choice(DURATIONS)
+    return {
+        "doctor_id": doctor_id,
+        "day_of_week": day_of_week,
+        "start_time": start_time,
+        "end_time": end_time,
+        "duration_minutes": duration_minutes
+    }
 def generate_appointment(appointment_number, total_patients, total_doctors):
     """Generates a random appointment record."""
     appointment_id = appointment_number

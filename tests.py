@@ -1,10 +1,11 @@
-import fastapi
-import pandas
-import faker
-import sklearn
-import torch
-import transformers
-import langchain
-import google.genai
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-print("Everything installed successfully!")
+MODEL_NAME = "google/flan-t5-base"
+
+print("Loading tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
+print("Loading model...")
+model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
+
+print("Model loaded successfully!")

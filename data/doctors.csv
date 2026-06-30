@@ -1,0 +1,51 @@
+doctor_id,doc_name,department,specialty,qualifications,email,phone
+1,Dr.Sara Singhal,Cardiology,Cardiologist,"MBBS, MD (Emergency Medicine)",zayyan68@example.org,09932857116
+2,Dr.Yashica Memon,General Medicine,General Physician,"MBBS, DM (Cardiology)",manne@example.org,06451061360
+3,Dr.Yashoda Sankaran,Pediatrics,Pediatrician,"MBBS, MS (Orthopedics)",kapurgagan@example.net,+914524721545
+4,Dr.Ekavir Ramakrishnan,Dermatology,Dermatologist,"MBBS, MD (Radiology)",brargabriel@example.com,06932145119
+5,Dr.Yauvani Pillay,Pediatrics,Pediatrician,"MBBS, MD (Nephrology)",sanne@example.net,03956931296
+6,Dr.Xiti Ganesan,Pulmonology,Pulmonologist,"MBBS, MD (Dermatology)",dkeer@example.org,02546103114
+7,Dr.Triya Gala,Orthopedics,Orthopedic Surgeon,"MBBS, MS (Orthopedics)",bimalamadan@example.com,+912171308233
+8,Dr.Harinakshi Upadhyay,Pediatrics,Pediatrician,"MBBS, MD (Microbiology)",ishakakar@example.com,+911886203058
+9,Dr.Viraj Thakkar,Pulmonology,Pulmonologist,"MBBS, MS (General Surgery)",vsarma@example.org,+919504439964
+10,Dr.Ekavir Handa,Orthopedics,Orthopedic Surgeon,"MBBS, MD (Pathology)",jaimuni@example.com,03079499245
+11,Dr.Benjamin Swamy,Dermatology,Dermatologist,"MBBS, MD (Obstetrics & Gynecology)",ektaramakrishnan@example.net,+914028640381
+12,Dr.Falak Gala,Pulmonology,Pulmonologist,"MBBS, DM (Neurology)",rajadaksha@example.com,1548391741
+13,Dr.Xavier Manne,Cardiology,Cardiologist,"MBBS, MCh (Urology)",sathviksinha@example.org,1096460969
+14,Dr.Zashil Sane,Orthopedics,Orthopedic Surgeon,"MBBS, MCh (Neurosurgery)",nakuldas@example.com,09544639880
+15,Dr.Bhavya D’Alia,Orthopedics,Orthopedic Surgeon,"MBBS, MS",naksh45@example.org,+915248717564
+16,Dr.Ridhi Balakrishnan,Orthopedics,Orthopedic Surgeon,"MBBS, MD (Community Medicine)",jairaj50@example.com,6996150976
+17,Dr.Vivaan Merchant,Pediatrics,Pediatrician,MBBS,rameshbhavani@example.org,+912134826581
+18,Dr.Yochana Agrawal,ENT,ENT Specialist,"MBBS, DM (Cardiology)",tsankaran@example.net,+918287746128
+19,Dr.Jackson Dash,Pediatrics,Pediatrician,"MBBS, MS (General Surgery)",acharyadominic@example.com,0253563564
+20,Dr.Shaurya Bose,Cardiology,Cardiologist,"MBBS, MD (General Medicine)",kbhavsar@example.org,09594617459
+21,Dr.Baljiwan Sharaf,Orthopedics,Orthopedic Surgeon,"MBBS, MD (Nephrology)",varsha31@example.org,6482152856
+22,Dr.Tara Doctor,General Medicine,General Physician,"MBBS, MD (Pediatrics)",dugardalaja@example.net,+916145475405
+23,Dr.Gautami Loyal,ENT,ENT Specialist,"MBBS, DM (Gastroenterology)",sudikshadalal@example.org,02797419886
+24,Dr.Vivaan Prakash,Pulmonology,Pulmonologist,"MBBS, MD",bakshimohammed@example.org,05210933226
+25,Dr.Vedant Ratti,Cardiology,Cardiologist,"MBBS, DM (Gastroenterology)",ethankhatri@example.org,1750060701
+26,Dr.Lakshmi Bal,Pediatrics,Pediatrician,"MBBS, DM (Endocrinology)",daniel30@example.net,+912193846538
+27,Dr.Janya Salvi,ENT,ENT Specialist,"MBBS, MS (ENT)",kamya86@example.com,9528740081
+28,Dr.Qadim Ganguly,ENT,ENT Specialist,"MBBS, MD (Cardiology)",raagini52@example.org,9029536220
+29,Dr.Pahal Bhakta,Neurology,Neurologist,"MBBS, MD (Radiology)",sarthakbanik@example.org,04609998601
+30,Dr.Isha Agate,Pulmonology,Pulmonologist,"MBBS, MS (Orthopedics)",ayushmantailor@example.net,7557387461
+31,Dr.Faraj Savant,General Medicine,General Physician,"MBBS, DNB",charvi62@example.net,08671264134
+32,Dr.Hiral Chada,General Medicine,General Physician,"MBBS, MD (Pathology)",talwarbalvan@example.org,9570636988
+33,Dr.Ekaraj Srinivas,Cardiology,Cardiologist,"MBBS, MS",pillaimekhala@example.net,1906240652
+34,Dr.Bimala Grewal,Neurology,Neurologist,MBBS,wriddhish34@example.com,7054359423
+35,Dr.Zansi Bhardwaj,Pulmonology,Pulmonologist,"MBBS, MCh (Neurosurgery)",chawlaraagini@example.com,+912236199994
+36,Dr.Samuel Bhatnagar,Neurology,Neurologist,"MBBS, MD (Neurology)",gaurisibal@example.net,08238090466
+37,Dr.Luke Dara,Cardiology,Cardiologist,"MBBS, MD (Neurology)",barkhabath@example.com,3280575385
+38,Dr.Lakshit Nadkarni,Neurology,Neurologist,"MBBS, MCh (Neurosurgery)",abdul48@example.org,01953689601
+39,Dr.Oviya Jaggi,Pulmonology,Pulmonologist,"MBBS, MD (Nephrology)",whegde@example.com,+913416221667
+40,Dr.Riya Mahajan,Cardiology,Cardiologist,"MBBS, MCh (Urology)",kritika63@example.org,+911530413555
+41,Dr.Anvi Sunder,General Medicine,General Physician,"MBBS, MD (Oncology)",kiaanmagar@example.net,1321392595
+42,Dr.Charles Shenoy,Pediatrics,Pediatrician,"MBBS, DNB",harinipandey@example.com,09877256726
+43,Dr.Keya Nagar,ENT,ENT Specialist,"MBBS, MD (Neurology)",tpai@example.com,9138907755
+44,Dr.Tripti Palla,Orthopedics,Orthopedic Surgeon,"MBBS, MD (Radiology)",agateoscar@example.org,07755419031
+45,Dr.Zashil Karan,ENT,ENT Specialist,"MBBS, MCh (Neurosurgery)",isaiahbuch@example.net,+913832113324
+46,Dr.Tanay Memon,Dermatology,Dermatologist,"MBBS, DM (Cardiology)",gaurav86@example.org,2665413018
+47,Dr.Chameli Kulkarni,Cardiology,Cardiologist,"MBBS, MD (Dermatology)",ksunder@example.net,+918244180971
+48,Dr.Manbir Munshi,ENT,ENT Specialist,"MBBS, MCh (Neurosurgery)",divyadyal@example.net,06360168237
+49,Dr.Bakhshi Murty,Dermatology,Dermatologist,"MBBS, MS (Orthopedics)",tbasu@example.org,+919190460850
+50,Dr.Aadhya Bhakta,Orthopedics,Orthopedic Surgeon,"MBBS, DM (Cardiology)",cghose@example.net,04131062941
