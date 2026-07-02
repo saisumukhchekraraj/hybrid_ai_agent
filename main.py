@@ -73,13 +73,13 @@ class UpdateDoctorSchedule(BaseModel):
     duration_minutes: int | None = None
 
 class DoctorAvailabilityRequest(BaseModel):
-    specialty: str
-    appointment_date: date
+    department: str
+    appointment_date: str
     
 class BookAppointmentRequest(BaseModel):
     patient_id: int
     doctor_id: int
-    appointment_date: date
+    appointment_date: str
     appointment_time: str
 
 #===========
@@ -244,7 +244,7 @@ def update_doctor_schedule_route(request: UpdateDoctorSchedule):
 def doctor_availability_route(request: DoctorAvailabilityRequest):
 
     return get_available_doctor_slots(
-        specialty=request.specialty,
+        department=request.department,
         date=request.appointment_date
     )
 
@@ -253,8 +253,8 @@ def doctor_availability_route(request: DoctorAvailabilityRequest):
 #-------------------
 @app.post("/appointments/book")
 def book_appointment_route(request: BookAppointmentRequest):
-
-    return book_appointment(
+     
+       return book_appointment(
         patient_id=request.patient_id,
         doctor_id=request.doctor_id,
         appointment_date=request.appointment_date,

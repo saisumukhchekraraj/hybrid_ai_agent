@@ -1,101 +1,101 @@
 patient_id,first_name,last_name,dob,gender,phone,email,address,insurance_company,insurance_id,patient_complaint
-1,Janani,Keer,1952-03-01,female,+916213857661,ashere@example.org,"191, Kapoor Nagar, Moradabad 173524",HDFC ERGO,WZ-XE4432,psychiatric for six years and I'm happy to have gone.
-2,Ria,Kannan,1947-02-09,female,02510177589,abhiramverma@example.net,"14, Nayak Nagar, Nanded-114566",Star Health,DC-BN6777,'I'm not sure if she is a pediatrician or a doctor.
-3,Dominic,Dora,1968-06-15,male,1979414565,naksh50@example.com,"352, Rege, Jaipur-553863",Care Health,ZX-RN3741,A patient with a bicep and a leg is placed on a floor.
-4,Keya,Jhaveri,1996-05-30,female,+919367878992,qasim91@example.net,"169, Chand Street, Bulandshahr 635404",Niva Bupa,HS-HE8075,heart is going to go wild with my burgeoning brain.
-5,Rachana,Bala,1993-02-03,female,1254042534,yauvani07@example.com,"26/13, Chanda Street, Ambattur-807339",Care Health,XM-QK1276,A patient is undergoing a heart surgery.
-6,Tanveer,Vasa,2022-12-19,male,0991057368,chaturachadha@example.net,"H.No. 845, Varty Circle, Tirunelveli-075528",Star Health,XL-IN6407,can help him with a scratch
-7,Charita,Bhardwaj,1992-12-17,female,0088126856,trivenisunder@example.net,"46/615, Sami Road, Bhiwandi-205788",HDFC ERGO,FQ-YS5021,Urology: My Urology is the most important part of my life
-8,Anjali,Chaudhuri,1976-09-21,female,+918467747011,prasadchandani@example.com,"344, Shetty Zila, Machilipatnam 032622",Care Health,BH-PE5300,a patient for years and I'm a very good doctor.
-9,Nicholas,Sastry,1990-07-01,male,3974425157,urmisrinivas@example.net,"H.No. 558, Dutt, Singrauli-410204",Care Health,JC-PX0137,The ophthalmologist sees that the patient is showing signs of a medical emergency.
-10,Diya,Jain,1997-11-06,female,03884626136,dhillonurvi@example.com,"711, Doctor Road, Ozhukarai 704157",Star Health,LW-DH9758,UOB is on a normal range.
-11,Hemani,Mahal,1967-05-09,female,06904120093,minhasyasti@example.org,"910, Chander Ganj, Chittoor-174472",ICICI Lombard,DP-FM9185,I walked in.
-12,Chaitaly,Mangat,1997-07-23,female,3419413094,chasmum42@example.com,"849, Mannan Nagar, Thoothukudi-139411",Star Health,JP-NT3997,She had a very bad hearing.
-13,Varenya,Bhat,1941-07-13,female,3554077930,dhaliwalanay@example.com,"071, Rana Marg, Bidar-036731",Care Health,SA-PU8660,going to the dentist for years.
-14,Arya,Oza,1959-11-07,female,08209802711,brarluke@example.net,"95, Choudhary Path, Purnia 955316",ICICI Lombard,EI-YO0640,The nurse is working at a nursing home.
-15,Vritti,Sant,1973-12-05,female,+918629214063,bbhakta@example.net,"H.No. 960, Rana Ganj, Amravati-708847",ICICI Lombard,FG-AA4432,I have lost my glasses.
-16,Andrew,Bose,1969-04-02,male,00245886343,yatinpadmanabhan@example.com,"80, Kala Road, Mangalore 482962",Star Health,SG-LU4696,Doctor in hospital working with a patient in the emergency room.
-17,Advika,Bhattacharyya,2020-08-28,female,3893144362,sbatra@example.com,"483, Basak Circle, Noida 342006",HDFC ERGO,NX-XL1236,visited a few times and I've really been a very supportive woman.
-18,Harini,Lall,1980-04-17,female,+913931322957,ubikasamra@example.org,"H.No. 21, Agrawal Chowk, Shimla-663792",ICICI Lombard,IX-ZB0167,She is an ophthalmologist with a degree in ophthalmology.
-19,Imaran,Sama,1950-06-15,male,+914647954883,hema51@example.org,"98, Chowdhury Zila, Guntakal-902943",Star Health,OY-EA6128,a problem.
-20,Yutika,Shenoy,1957-05-21,female,6210096009,pahal52@example.com,"72/65, Naidu Zila, Proddatur-632204",ICICI Lombard,AB-GL2111,"are a diabetic, I have a heart condition."
-21,Yachana,Mangal,1951-01-30,female,+910383487753,tsoni@example.com,"68/37, Bala, Avadi-961946",Star Health,OQ-DH2949,I need to see a dermatologist as soon as I can.
-22,Harrison,Golla,2021-03-03,male,04869629488,yashasvikhanna@example.com,"31, Varma Marg, Mumbai 611265",Star Health,RR-TP3031,Urology teacher tells him about his urology education.
-23,Sachi,Rout,1975-06-23,female,5975224398,chhabrabalhaar@example.net,"11, Sodhi Path, Imphal 824316",HDFC ERGO,ZN-XT4950,I have been feeling like I've had a really long run of events.
-24,Girindra,Gour,1988-12-06,male,+915237553370,sachi48@example.net,"131, Bawa Marg, Tezpur 672648",Star Health,SN-PJ9463,a hunch that I want to get married to.
-25,Ekbal,Pai,1996-02-24,male,+919802750781,vaishnaviverma@example.org,"379, Sood Nagar, Bally-360032",Star Health,KE-LU2898,are pregnant with his baby.
-26,Arjun,Kuruvilla,1960-02-02,male,02868780214,amrutabera@example.com,"363, Misra Zila, Karimnagar 667796",HDFC ERGO,BI-ZU9884,I got a heart attack and it had been going on for three days and then I went home and woke up.
-27,Ronith,Gola,2001-11-20,male,+918281371333,pillaiyasti@example.com,"336, Barad Chowk, Sangli-Miraj & Kupwad-938675",Star Health,NQ-OB4976,eye isn't looking right.
-28,Radha,Golla,2012-03-23,female,+910361453511,hayreurvi@example.com,"92, Sehgal, Morena 783843",Niva Bupa,HO-NU0422,am happy that I have been given the right treatment and it's nothing to worry about.
-29,Henry,Nanda,1958-01-09,male,01357641436,gsoman@example.net,"H.No. 660, Hegde Road, Mathura-655306",ICICI Lombard,XO-QT5004,a patient for years.
-30,Forum,Golla,1990-02-24,female,9051380569,waida98@example.com,"H.No. 173, Sachdev Street, Visakhapatnam-671951",HDFC ERGO,IB-WZ4193,not eaten a very good meal yet.
-31,Chakrika,Rajan,2020-08-15,female,3200708535,sahotaomkaar@example.org,"70/396, Dyal Path, Mahbubnagar-678405",HDFC ERGO,LX-GB9288,going to a surgery.
-32,Mahika,Nagarajan,2024-08-06,female,07811319503,obal@example.org,"H.No. 708, Talwar Zila, Pondicherry-604670",Care Health,CY-OJ7895,walked out of the office with a bowel obstruction.
-33,Omkaar,Patla,2007-10-17,male,09290050302,eperi@example.net,"60/14, Talwar, Bhilwara-079047",ICICI Lombard,KL-KQ3871,skin is so soft.
-34,Dayamai,Johal,1951-06-06,female,3161430027,ymemon@example.com,"54/309, Pradhan Street, Unnao 520198",ICICI Lombard,UZ-CK8545,a lot of vision.
-35,Libni,Thaker,1936-07-29,female,5799110968,wahab00@example.org,"H.No. 441, Sinha Chowk, Darbhanga-337123",ICICI Lombard,SZ-ID9951,Gastroenterology is my specialty
-36,Leela,Munshi,1953-02-08,female,09675296484,bhaktaatharv@example.net,"68, Chandran Nagar, Bikaner-806359",HDFC ERGO,TR-KN0099,'I have a bowel obstruction'
-37,Triya,Pradhan,1963-02-05,female,+918151993780,lakshit39@example.com,"91/147, Pingle Street, Guntur-705786",Care Health,BW-AN2078,Gastroenterology doctor has an enlarged stomach and she wants to see if it can improve her breathing.
-38,Aayush,Bajaj,1993-08-01,male,+917227024824,nsur@example.org,"19/456, Wali Path, Ahmednagar 727421",Care Health,GR-OW1981,dermatologist for 30 years now.
-39,Bhavini,Kar,2011-01-24,female,2055590637,tripathigaurangi@example.com,"H.No. 064, Sanghvi Marg, Ratlam 982417",ICICI Lombard,ZM-NK7441,eye doctor will see her to see if I can help her.
-40,Hitesh,Kant,1940-12-07,male,+911785590060,jaingirish@example.com,"47/043, Chana Road, Imphal 613520",HDFC ERGO,SU-WA0982,calf is breaking.
-41,Azaan,Soman,1980-07-25,male,8991078494,yashvirau@example.org,"H.No. 457, Shan Chowk, Bhagalpur 733988",HDFC ERGO,DN-DN9436,A patient and his family are in a hospital.
-42,Tanish,Sampath,1962-01-07,male,3362977099,moreikshita@example.com,"H.No. 559, Kumar Marg, Karimnagar-346030",Care Health,HW-FO0284,"I think I can be a bit able to handle a situation, and I think I can help you to understand the situation"
-43,Anamika,Mitter,1937-01-17,female,+917812894373,eesha18@example.org,"H.No. 163, Gopal Nagar, Naihati 896359",ICICI Lombard,WS-TL9768,a patient for many years now and it's been a nice thing to see people.
-44,Udant,Jhaveri,1985-02-11,male,7335032748,pgrewal@example.net,"44, Mitra Path, Bareilly 018304",Star Health,QV-MF1445,preparing for a baby.
-45,Kala,Sachdeva,2017-11-26,female,00752968940,nisha33@example.com,"763, Shenoy, Srikakulam-271788",Care Health,DV-ML3352,The patient is using a plastic framed lens.
-46,Udarsh,Soman,1993-06-06,male,02421539530,memonkamya@example.net,"H.No. 551, Deo, Ratlam 618855",HDFC ERGO,WE-PH8707,a feeling I have an issue with this.
-47,Nathaniel,Nadig,2019-10-25,male,+915430184806,aashi39@example.net,"H.No. 86, Sarkar Road, Sikar 716155",Star Health,YO-DL2501,have never been able to use my right thigh.
-48,Xalak,Kara,1971-12-28,female,05005780167,tanveer10@example.com,"49, Ghose Zila, Sikar 869146",Care Health,DY-RE1668,a heart attack.
-49,Gayathri,Wable,2026-05-30,female,3703843343,bhaviniuppal@example.net,"62/02, Sethi Road, Farrukhabad 194850",HDFC ERGO,KW-JC6257,a patient for a year now.
-50,Ishanvi,Bail,1945-11-10,female,00428094844,manya43@example.net,"33/28, Devan Street, Jabalpur 349300",Niva Bupa,DH-RN4098,in a psychiatric clinic for about half a year now. I was prescribed medication for her. I walked in there and told the receptionist about the pain.
-51,Indrajit,Dhar,1958-08-15,male,08410679218,shivaninazareth@example.org,"86/43, Majumdar, Kirari Suleman Nagar 691083",Care Health,TW-GX6529,a big smile on my face
-52,Qasim,Srinivasan,1988-09-03,male,05416974049,fkrish@example.com,"H.No. 01, Ramakrishnan Zila, Sikar-383249",Star Health,OY-FL4779,Dermatology for 18 years.
-53,Dipta,Garde,2019-12-28,female,2065559731,atwalayush@example.org,"H.No. 373, Ratta Zila, Mau-587878",Care Health,TN-SE2908,I had a gut surgery.
-54,Tristan,Kade,1998-12-23,male,6795000148,saggarwal@example.com,"02, Barman Marg, Uluberia-760190",Niva Bupa,XX-SB7756,"at a different school, but I've always been very happy in the last four years."
-55,Meghana,Sem,1966-04-08,female,5879901839,zsanghvi@example.net,"35/52, Pandey Circle, Patiala 724412",Star Health,TA-GK4527,"a patient of Dr. Walker for about three years now, and I've been a patient for four years."
-56,Pahal,Oak,1984-02-13,female,2390834254,yashvipathak@example.org,"71/115, Tank Circle, Kottayam 398836",Niva Bupa,XM-EF1999,Alzheimer's
-57,Vasana,Sekhon,1950-03-24,female,8670145924,jeet49@example.org,"76, Chandra Path, Hajipur-417277",ICICI Lombard,LZ-BO2244,if a patient had a heart defect she was able to treat it
-58,Charles,Zachariah,2011-12-07,male,04645066448,duttanirja@example.org,"51, Varty Ganj, Sri Ganganagar-186541",ICICI Lombard,UF-HN4574,Orthopedics is great.
-59,Shivansh,Wable,1984-02-27,male,+910709457266,pallavikannan@example.com,"323, Char Chowk, Muzaffarnagar 735334",Star Health,SI-ON2920,"My life, I have cancer."
-60,Vamakshi,Bala,2025-06-22,female,02081308504,peterlala@example.net,"842, Jayaraman, Parbhani-958118",Star Health,IW-IW0924,I have a little girl who checks in at Oncology reception. I'm in the middle of a new development.
-61,Kashvi,Apte,1960-09-23,female,08996648765,parmeradvika@example.net,"52, Guha, Aurangabad-712687",Niva Bupa,OF-QK6495,mom used to work at a grocery store.
-62,Manan,Pau,1991-10-21,male,+914024115887,fsharma@example.org,"H.No. 731, Dada Zila, Surat 808442",Care Health,LS-HT8284,I am in a situation in which I would have to use a wheelchair to get to the table or chair. I don't know why I have to go there.
-63,Zarna,Muni,1977-11-23,female,6810028379,pnath@example.net,"H.No. 357, Sahota Zila, Coimbatore 205443",Niva Bupa,ZX-YF9854,a patient here for a year and a half now.
-64,Abeer,Mody,1941-11-28,male,+914212296797,ygera@example.org,"36/89, Krishna, Bardhaman 971220",HDFC ERGO,UR-SC0822,eye hurts.
-65,Chavvi,Amble,2002-11-06,female,09806133936,kohlikavya@example.net,"20/357, Mand Marg, Fatehpur-433868",ICICI Lombard,JK-NY3654,Thermoflutis is a condition in which the muscle and bone in your leg are weak and are injured. I've had problems with that before.
-66,Zilmil,Chatterjee,1979-08-12,female,6258576572,yagneshluthra@example.com,"865, Mannan Marg, Surendranagar Dudhrej-908443",Niva Bupa,LP-VS4129,Dermatology.
-67,Falguni,Sampath,2011-07-15,female,+910855046423,cdubey@example.com,"093, Sundaram Circle, Gopalpur-288238",HDFC ERGO,IG-BZ9209,a family history of depression.
-68,Teerth,Kalita,1984-09-17,male,+913761306712,cheemazarna@example.org,"H.No. 81, Kumar Road, Rourkela-251711",ICICI Lombard,HU-OG5023,He was given a X-ray at the end of the surgery.
-69,Girindra,Som,1994-06-08,male,3901736431,avni28@example.org,"595, Patla Chowk, Chandrapur-849544",Care Health,FT-PC8903,A dermatologist tries to treat the rosacea.
-70,Indira,Iyengar,1936-11-28,female,5110436529,warda33@example.net,"728, Varma Street, Kumbakonam-380444",Niva Bupa,VP-RR7326,cancer.
-71,Varenya,Bajwa,1957-03-27,female,08231873381,yashoda99@example.org,"28/89, Mandal Chowk, Nandyal 144964",ICICI Lombard,VH-BX7015,A female patient in a vascular disease who is at the centre of a tumour.
-72,Keya,Tak,2007-09-24,female,+918405482483,sarnaagastya@example.com,"37/73, Krishnan Path, Tiruchirappalli 951915",ICICI Lombard,MK-GM9646,I just been discharged.
-73,Maya,Johal,1980-02-28,female,+917643276074,saneidika@example.net,"H.No. 95, Kaur Chowk, Shivpuri-150938",ICICI Lombard,ND-VJ7842,eyes are swollen and it looks like it was taken out of the water.
-74,Hemangini,Patil,1957-03-03,female,+916061209092,misrabachittar@example.org,"05/28, Sheth Circle, Erode-156516",HDFC ERGO,DU-SZ8597,I got a cholanguya.
-75,Falak,Rege,1942-05-28,female,04622236720,ibalan@example.org,"H.No. 18, Kapur Path, Maheshtala-329422",ICICI Lombard,US-FC6098,a rash
-76,Hemal,Dhillon,1972-06-13,female,7063170124,vyasjagdish@example.org,"H.No. 846, Bhargava Marg, Pallavaram-777527",Care Health,FJ-RQ8574,OPD doctor is a good surgeon
-77,Daniel,Mital,1995-09-20,male,+917523189889,goleharinakshi@example.net,"43/61, Ratta Chowk, Mangalore 185630",Star Health,DP-HW0024,been to this hospital for almost a year and a half. It's my favorite place in the world.
-78,Shaurya,Tailor,2004-10-26,male,0573779103,manthankala@example.net,"18, Barad Nagar, Kota 099909",HDFC ERGO,PX-HJ0901,"ear, and my sinuses."
-79,Janya,Sood,2025-05-25,female,+916816612365,kalitadhriti@example.org,"55, Mann Road, Hosur-529933",ICICI Lombard,DX-KQ7011,I have cancer. I'm not sure what to do.
-80,Upma,Gole,2014-07-23,female,+915000894131,gaurikavarughese@example.net,"81, Bail Zila, Bhagalpur 703714",Niva Bupa,GJ-SN3273,Feng shui.
-81,Dalbir,Chaudhari,2024-05-02,male,07203456233,xiti05@example.net,"39/912, Baral Nagar, Jabalpur 159058",ICICI Lombard,VW-WQ0384,"I don't know if he has been rushed, but I'm fine. 'I'll take him home then' says a child's mother."
-82,Tejas,Bhardwaj,1974-05-30,male,6562244592,andraisha@example.net,"25, Dugar Marg, Bikaner 894628",HDFC ERGO,TF-YP8991,hysterectomy.
-83,Garima,De,1973-05-19,female,3116775344,mekhaladar@example.net,"H.No. 402, Dhar, Thanjavur 973949",Star Health,DV-IC8987,The female patient was diagnosed with a hepatitis B virus.
-84,Vihaan,Handa,2010-06-10,male,04692524807,tminhas@example.net,"477, Bhandari, Sambalpur 585358",Star Health,TC-ZH9010,Were you born before the last one?
-85,Anita,Wali,1944-06-08,female,7133454847,aarini44@example.com,"93/29, Grewal Chowk, Gulbarga-859664",ICICI Lombard,IR-OM0385,cardiology doctor is standing next to her.
-86,Wazir,Vyas,2022-03-17,male,7528269601,kaurkalpit@example.com,"45/90, Parsa Zila, Amritsar 870321",Niva Bupa,CC-EO6134,My son.
-87,Ekbal,Venkatesh,2013-09-26,male,+918485982373,gunbirbadami@example.net,"H.No. 100, Puri Road, Ballia-060655",Star Health,TC-XJ1903,can't wait to see my father.
-88,Lopa,Mishra,1941-07-18,female,05481743888,gagan47@example.com,"58/101, Agate Marg, Sirsa 109976",ICICI Lombard,SO-ZA2806,has been here for one month.
-89,Jeevika,Korpal,1996-09-30,female,02321877993,rayaan39@example.org,"H.No. 956, Mahal Chowk, Medininagar-399472",ICICI Lombard,YQ-IU8241,ve been a patient for a year.
-90,Champak,D’Alia,1944-10-20,male,+918568623698,bahadurjitrama@example.net,"H.No. 88, Ahluwalia Road, Ramagundam-737248",Star Health,CU-EE9192,Alive since my mother died.
-91,Ekalinga,Prakash,2008-04-28,male,05143835301,avisrinivas@example.org,"08/25, Kota, Patiala 398191",HDFC ERGO,DR-SC9456,a lot of people lately. I've been a good patient. I've been thinking about it.
-92,Diya,Ghosh,2006-12-16,female,05622747406,qarin32@example.org,"H.No. 71, Gole, Satna 330221",Niva Bupa,WJ-ZS4900,"a patient for years, she says."
-93,Forum,Kalita,2008-01-01,female,5653791312,manbirpal@example.com,"H.No. 528, Dhawan Path, Mathura-374162",Star Health,YR-CH5733,"eye is the most beautiful one in my world, right?"
-94,Zayyan,Gole,1981-10-26,male,08575769837,qguha@example.org,"H.No. 026, Kalita Circle, Vellore 987206",ICICI Lombard,HQ-LP3146,OPD diagnosis was the last thing they wanted to do.
-95,Hredhaan,Goel,2022-08-13,male,+911818115367,xkale@example.com,"28/802, Tella Zila, Nellore 571506",ICICI Lombard,WJ-NX0483,a slot.
-96,Ira,Bobal,2020-08-04,female,02718330996,praneelbora@example.net,"98/99, Dar Circle, Satna 633175",Niva Bupa,PF-TU9209,I heard a nurse calling to say they would be seeing a pediatrician.
-97,Triveni,Pillay,1947-12-06,female,00528548154,qkumer@example.org,"14/95, Bansal Zila, Bellary 136572",Care Health,HF-KL7138,I've had a really tough time.
-98,Zayyan,Subramanian,1960-12-30,male,+911292267080,datepahal@example.com,"95, Bhargava Street, Pondicherry 042717",HDFC ERGO,XC-IK8017,Urology is doing fine. He's still a patient
-99,Ishwar,Palla,2004-05-29,male,+911529318325,jason85@example.org,"647, Raju Chowk, Kozhikode 395567",Care Health,EB-DP2628,They are on a routine medical procedure
-100,Upma,Khatri,2025-07-10,female,+919939108219,ethan06@example.net,"H.No. 54, Sidhu Zila, Ulhasnagar 658469",ICICI Lombard,HM-MA7734,My heart
+1,Ati,Naidu,1990-07-20,female,+919498818448,manthannagar@example.com,"00/34, Goyal Circle, Jabalpur-956198",Niva Bupa,GZ-MJ7209,a rash
+2,Ria,Doshi,1951-09-09,female,+912414148197,fvenkataraman@example.net,"43, Modi Nagar, Hapur-442329",Star Health,QV-TT9190,sit up.
+3,Naveen,Kumer,1936-05-23,male,09899261493,hayerdayamai@example.net,"601, Bhalla Circle, Berhampur 647545",Niva Bupa,PS-SZ0563,itch
+4,Wishi,Varty,1942-05-03,female,02439670142,pshetty@example.net,"H.No. 39, Mital, Nagpur-769334",Care Health,CC-ZX7612,is getting worse.
+5,Yuvraj,Bhasin,1949-11-30,male,00650805547,jagatjoshi@example.org,"19, Kamdar Street, Erode 117363",Care Health,OS-BN4109,doctor is a doctor.
+6,Indrajit,Gole,1950-08-23,male,07609340655,rbahri@example.com,"77, Palla Chowk, Kota-637466",HDFC ERGO,ST-HM0910,have been able to get my life back.
+7,Gautami,Naik,1975-12-05,female,3662367767,aanne@example.org,"76/796, Kashyap Zila, Baranagar-559920",Care Health,WY-OT0305,can't sleep.
+8,Harsh,Bhattacharyya,2010-07-19,male,4295881421,jdhar@example.net,"H.No. 478, Mody Marg, Miryalaguda 484717",ICICI Lombard,SC-ZJ2478,headaches.
+9,Daksh,Balay,2016-07-05,male,5352591706,mohammedsheth@example.net,"73/992, Kapur Nagar, Eluru-684546",Care Health,YO-NY2062,is hurting me
+10,Vihaan,Bava,1982-10-18,male,+911914108088,bhavanijhaveri@example.net,"H.No. 43, Sawhney Circle, Giridih-219490",Star Health,RU-EV1130,swollen ankles are a symptom of a septicemia.
+11,Chandresh,Karnik,2012-11-11,male,5583705296,gautamnarayanan@example.com,"07, Srinivasan Circle, Bhiwandi-393885",Care Health,QU-LL6000,sprained my ankle.
+12,Veda,Gour,1986-03-26,female,+918691005304,kdeo@example.com,"844, Sood Marg, Ambala-555360",Star Health,UQ-FC9190,don't want to go back to sleep.
+13,Ati,Parsa,1991-05-30,female,+917585524668,pushti18@example.net,"H.No. 129, Suri Street, Medininagar 037142",Star Health,FJ-MR6281,itch
+14,Ayushman,Lalla,1996-01-10,male,+916978829944,prabhufaraj@example.org,"397, Sekhon Path, Jaunpur 686355",ICICI Lombard,IW-KV7283,left ear are aching.
+15,Onveer,Rattan,2024-07-30,male,06983557230,vermashaurya@example.net,"H.No. 811, Sagar Road, Buxar-369903",Niva Bupa,KM-DF7969,work in a hospital.
+16,Avni,Cheema,1976-09-11,female,9763682275,rajanraghav@example.com,"75, Kannan Marg, Morena-862741",Star Health,QQ-DR2452,ill for a long time.
+17,Jagdish,Dara,1971-03-11,male,+919867154537,issacsamuel@example.com,"945, Dhar Road, Bhopal-385661",ICICI Lombard,OT-LN3901,"no, they're still bad."
+18,Ganga,Behl,1997-07-25,female,06349217312,raveljacob@example.com,"H.No. 63, Bora Circle, Guntur 067149",ICICI Lombard,LG-HK4149,sneezing
+19,Harini,Chakraborty,1949-09-25,female,1489536261,ansh97@example.com,"86/972, Krish Road, Warangal 248429",Care Health,VO-XE1974,a stomachache.
+20,Maanas,Chandran,1940-08-07,male,07205880833,logangarde@example.org,"647, Dalal Marg, Vijayawada 802763",Star Health,IJ-QZ8461,sneezed.
+21,Vaishnavi,Gaba,1995-10-23,female,02806964607,anitakrishna@example.com,"212, Deol Nagar, Morena 425790",Care Health,NU-SX5311,scold the patient.
+22,Bakhshi,Sura,2004-10-17,male,2992760192,edhitha59@example.org,"H.No. 80, Oza Zila, Haridwar 796196",Care Health,LS-IY6530,I'm a patient and I want to be treated fairly.
+23,Wakeeta,Chand,1961-08-28,female,+916514452127,lpanchal@example.com,"09/74, Gara Chowk, Silchar-170855",HDFC ERGO,PK-HA5668,rash
+24,Alexander,De,2009-04-14,male,+911156349240,rkhanna@example.com,"884, Bawa Chowk, Bidar 861465",ICICI Lombard,GU-XW9635,have been having a lot of trouble sleeping.
+25,Upadhriti,Bhagat,2006-10-05,female,2925666257,akshayshan@example.com,"H.No. 26, Batta Nagar, Sultan Pur Majra 167816",Star Health,GF-WX5239,shook my head a lot.
+26,Ekavir,Mahajan,1963-03-13,male,01451476563,pdeshpande@example.net,"87, Thaker Marg, Tumkur-752723",ICICI Lombard,AO-SD0847,'m going to get a new haircut.
+27,Banjeet,Mahal,1959-02-16,male,+918276371337,laban78@example.net,"71/12, Kohli Ganj, Barasat-405808",Care Health,WM-DS7471,is a diabetic.
+28,Janya,Saha,1949-02-24,female,3018834744,andrew05@example.com,"163, Mannan Nagar, Sambalpur-644206",Care Health,WD-SS8379,have been waking up with a headache.
+29,Rachit,Kata,1951-08-30,male,02613135749,pkapoor@example.org,"542, Nigam Ganj, Surendranagar Dudhrej-991336",Care Health,AI-TH6988,have been having a headache.
+30,Lekha,Bora,2019-07-19,female,07672578006,parth02@example.org,"03/340, Babu Marg, Barasat 511654",Niva Bupa,MI-XH6212,"doctor, I'm not feeling well."
+31,Edhitha,Ranganathan,1964-03-09,female,+915906623191,anita60@example.com,"61, Purohit Marg, Katihar 216162",HDFC ERGO,MD-ZT2640,strep throat
+32,Anthony,Ghose,1979-12-21,male,4220048278,snehaborde@example.com,"30/783, Memon Circle, Siwan 788152",HDFC ERGO,FR-HZ7338,'m just not getting any help
+33,Nathaniel,Nagar,2009-03-23,male,7911556590,butalaquincy@example.net,"93, Mukhopadhyay Ganj, Tiruppur 494918",HDFC ERGO,DJ-IB9773,'m going to go swimming.
+34,Rayaan,Batra,1957-12-18,male,08164488373,yashsha@example.org,"15/695, Pillai Nagar, Aurangabad 267214",Star Health,LS-WS9499,a heart attack.
+35,Xiti,Behl,1972-01-17,female,+912445080807,sehgalfinn@example.org,"H.No. 68, Zachariah Zila, Hospet-711486",ICICI Lombard,RW-WN7727,I'm not sure what it is.
+36,Champak,Johal,1936-02-20,male,00491610948,udyatidhingra@example.org,"17/23, Thakur Circle, Jalandhar 672624",ICICI Lombard,RT-CG7487,don't think I'll be able to sleep tonight.
+37,Priya,Sahni,1956-05-03,female,+918460063849,ishwarkaur@example.net,"H.No. 982, Kota Zila, Bhiwani-616325",Care Health,WO-KK2139,have been feeling a little better.
+38,Upadhriti,Bhatt,2019-07-30,female,+917996929449,vanshanagi@example.net,"77/491, Panchal Path, Panvel-889930",HDFC ERGO,CN-AP2318,I'm still having a hard time breathing.
+39,Kalpit,Patla,2005-03-11,male,0572494473,boasemohammed@example.net,"153, Kala Nagar, Chittoor 578214",HDFC ERGO,SA-HM2213,can't remember the last time it happened.
+40,Aarnav,Rajagopal,2020-06-13,male,1577009167,calebbose@example.net,"875, Basu Street, South Dumdum 245586",Star Health,AJ-JC1510,sick for a week.
+41,Rayaan,Edwin,2018-12-02,male,04523819139,abrar@example.com,"66, Rau Chowk, Kakinada 543789",Care Health,CT-CZ4843,a headache.
+42,Libni,Dugar,1998-06-28,female,7460185950,parthsahota@example.org,"44/653, Palla Street, Meerut-679372",ICICI Lombard,WR-XB3112,have to wait for the doctor to come in and talk to me.
+43,Aarnav,Banerjee,2001-05-23,male,01273926814,daraorinder@example.com,"H.No. 74, Gupta Road, Jamshedpur 738411",Care Health,XR-JT7057,don't think I'll be able to go on.
+44,Falan,Dube,1950-01-28,male,2249228603,vaishnavi45@example.com,"H.No. 74, Mani Path, Aurangabad-966859",ICICI Lombard,JD-MK2535,it was very severe
+45,Elijah,Tata,2001-11-30,male,0372229360,choprakrisha@example.com,"83, Bali Marg, Nagercoil 903122",ICICI Lombard,HL-KF9704,a fever
+46,Yasti,Singh,1957-05-15,female,+911854334227,wardapant@example.net,"H.No. 27, Goda, Deoghar 911362",Niva Bupa,XN-NI5275,a headache
+47,Nilima,Vohra,1939-03-24,female,1570030669,tbasu@example.net,"H.No. 128, Kade Chowk, Anantapur 945562",Star Health,MH-MF4851,scolded him.
+48,Indrajit,Radhakrishnan,1962-11-19,male,+919544639842,kevin55@example.net,"962, Sura Road, Ulhasnagar 767801",Star Health,KN-LT4668,I have been having a lot of headaches
+49,Zaid,Sen,1956-01-28,male,8223429153,yasti19@example.com,"03, Chandra Zila, Eluru-733959",ICICI Lombard,OZ-DC4771,sprained my ankle.
+50,Unni,Varughese,1964-02-20,female,00922449316,champak48@example.org,"28, Swamy Road, Coimbatore 418252",HDFC ERGO,CI-CT3024,eat more apples.
+51,Atharv,Deo,2021-06-30,male,2531329412,merchantvyanjana@example.com,"H.No. 092, Sha Path, Mathura-709591",Care Health,XN-KC4870,threw a ball into the air.
+52,Rushil,Kulkarni,1964-12-06,male,03141689661,jaidar@example.com,"H.No. 290, Randhawa, Jalna-570273",Star Health,ZI-NI8793,I'm afraid I'm going to have to go to the hospital.
+53,Urishilla,Raghavan,1954-01-01,female,2766904146,vasatripti@example.org,"84/148, Issac Path, Ongole-495492",ICICI Lombard,ZW-VA4104,sit up.
+54,Hritik,Aurora,1961-01-28,male,02187115426,ddeshpande@example.com,"13, Cherian, Hubli–Dharwad 395809",Star Health,LB-CM4282,suck on my sock.
+55,Daksha,Loyal,1957-03-29,female,04246845379,owenmannan@example.org,"H.No. 16, Goda Ganj, Unnao-967097",Niva Bupa,WP-TI2611,I have a sprain in my right hip.
+56,Tanish,Rau,1957-02-22,male,05193673075,amrutajayaraman@example.com,"H.No. 45, Vig Chowk, Moradabad 120190",ICICI Lombard,IX-YI7218,ill for a long time.
+57,Ekta,Bajaj,1977-09-16,female,05901153109,chaudharyaarav@example.org,"20/375, Bahl Street, Jehanabad 711132",HDFC ERGO,CH-WY8170,I have a health problem
+58,Garima,Singhal,1973-05-04,female,+919957393476,krishnanchandresh@example.org,"46, Dugar Street, Rewa 659197",Niva Bupa,BA-BW6091,doctor is a liar.
+59,Yashica,Kapoor,2015-08-30,female,06958676294,yagnesh32@example.org,"23, Rastogi Nagar, Bally 869594",Care Health,UN-XW6020,achy
+60,Varsha,Guha,2005-11-19,female,0510624497,umangal@example.org,"H.No. 78, Narain Nagar, Bulandshahr 648775",Niva Bupa,TH-KH5252,ill for a long time.
+61,Yashica,Ramakrishnan,1963-05-03,female,+910695594504,kadakiasai@example.net,"46/33, Sandhu Marg, Mumbai-539019",Care Health,KR-OQ7419,is swollen.
+62,Gaurang,Dey,1997-08-18,male,+910367159780,lallyutika@example.org,"07/82, Wason Ganj, Adoni-443806",HDFC ERGO,CC-BR0781,good
+63,Raksha,Sehgal,1979-01-30,female,6447598153,ayush83@example.com,"H.No. 25, Venkatesh Chowk, Haldia-734940",Star Health,MC-KG4451,diet is very unhealthy.
+64,Chaitanya,Jha,1946-01-14,male,+917101382663,karanudarsh@example.org,"90/58, Zacharia Circle, Raichur 710831",Star Health,WU-QH2143,don't know what to do.
+65,Krish,Choudhury,1976-03-15,male,0724024073,pranitsabharwal@example.net,"44/113, Dave Street, Bidhannagar-991787",HDFC ERGO,GU-NF3353,a headache
+66,Anay,Dube,1951-08-17,male,07163797545,niharikabalasubramanian@example.net,"H.No. 51, Sampath Path, Bhatpara 705019",Care Health,PP-WV4439,have been feeling sick.
+67,Utkarsh,Taneja,1969-11-12,male,08576928851,acharyageetika@example.org,"28/90, Gala Street, Kamarhati 706603",Care Health,OH-GL7032,sneezing
+68,Christopher,Shah,1953-07-04,male,05877581467,yochana52@example.org,"81/73, Bora, Uluberia-951121",Niva Bupa,XT-WF8896,I'm afraid I'm going to have to go to the hospital.
+69,Hamsini,Bala,2017-08-25,female,6150214065,bawaorinder@example.com,"20, Sodhi, Dehradun-975105",Niva Bupa,DN-KR1672,shook my head and screamed.
+70,Frederick,Dora,1951-01-03,male,00031991842,vedikadutt@example.com,"H.No. 57, Dhillon Zila, Morena 106935",HDFC ERGO,FZ-CN6271,ill for a long time.
+71,Sneha,Wali,1992-08-07,female,8367368792,jhalak26@example.org,"H.No. 013, Kapadia Nagar, Nizamabad-086719",Niva Bupa,KM-SU2818,shin
+72,Sara,Bhattacharyya,1981-03-17,female,6814683109,waida09@example.net,"H.No. 447, Mani Nagar, Korba-836435",HDFC ERGO,ZC-RD6174,a headache.
+73,Keya,Chahal,1959-06-22,female,04337701570,dugarganga@example.com,"H.No. 31, Srinivasan Circle, Etawah 615462",HDFC ERGO,JO-YC9662,has been vomiting.
+74,Vincent,Chand,2005-12-05,male,07209748785,baghyawatiupadhyay@example.net,"476, Mukherjee, Karnal-504750",Care Health,QQ-WO7068,stress
+75,Upadhriti,Pau,1936-07-04,female,+913365791395,harshil34@example.com,"64, Ramanathan Marg, Pali-912630",Care Health,GJ-GW1550,a fever.
+76,Girish,Murthy,1963-08-28,male,5466327016,fmall@example.com,"H.No. 740, Dasgupta Road, Gulbarga 257213",HDFC ERGO,JB-FQ8787,am having a bad cough.
+77,Udyati,Kaul,2018-05-19,female,3208635706,kpatla@example.net,"H.No. 967, Dalal Ganj, Ozhukarai-160060",Niva Bupa,WZ-LO4075,have to drive for hours
+78,Mohammed,Subramanian,1956-02-01,male,+917418788730,sachishroff@example.net,"98/40, Palan Path, Sasaram-998170",Care Health,KV-IM1606,ill for a long time.
+79,Gauri,Palla,1950-02-01,female,5053885129,arjundugar@example.net,"38/807, Narayan Chowk, Motihari-602323",HDFC ERGO,NY-NG4746,eat a lot of food.
+80,Bina,Ahuja,1980-11-06,female,+918401839045,isaxena@example.net,"H.No. 366, Sunder Chowk, Howrah-514548",ICICI Lombard,AR-QX2304,good
+81,Wishi,Chad,2001-05-31,female,08614739555,bhavika66@example.net,"58, Lanka Zila, Panvel-102814",Niva Bupa,VP-VK4898,it was very painful
+82,Aahana,Ahuja,1963-09-03,female,02662067572,chatreshhayre@example.com,"60/55, Mandal Circle, Berhampur-281393",Niva Bupa,JS-WY5982,sat down to a simple question.
+83,Reva,Goel,2015-01-02,female,7512112944,ramaswamylipika@example.org,"46, Ramachandran Ganj, Mahbubnagar-397646",HDFC ERGO,GC-XQ4725,a fever
+84,Luke,Patla,1976-02-28,male,03151157631,issacqadim@example.org,"950, Hans Chowk, Singrauli 670093",Care Health,NX-HB5023,tired
+85,Chakradev,Goda,2004-04-05,male,0188809100,qprasad@example.net,"163, Nazareth Road, Kochi 912287",Niva Bupa,FG-SC7503,threw a ball. I was hit by a ball. I screamed. I fell. I was hit by a ball. I was hit by a ball. I was hit by a ball.
+86,Udarsh,Buch,1993-02-21,male,06682376986,tripathikrisha@example.net,"17/858, Gokhale Road, Bahraich 554710",Niva Bupa,JQ-UV7957,shiver
+87,Faraj,Prasad,1993-10-07,male,07686153151,mangatbina@example.com,"H.No. 21, Grewal, Machilipatnam-747717",ICICI Lombard,HD-BJ5808,The doctor is a doctor
+88,Chaaya,Padmanabhan,2005-04-26,female,4309814970,vedikabhattacharyya@example.com,"263, Gour Path, Mira-Bhayandar-328551",HDFC ERGO,GN-KF9776,work in a factory.
+89,Ayushman,Gole,2001-01-11,male,07173891147,triveditara@example.net,"H.No. 41, Manda, Bhalswa Jahangir Pur 798299",Star Health,YJ-PI4461,my back are sore.
+90,Imaran,Sekhon,1978-10-20,male,+918004624996,tkanda@example.com,"10/583, Doctor Street, Hyderabad-335545",Niva Bupa,RA-QH2561,good
+91,Vasudha,Jaggi,1940-06-07,female,+915526049111,ijayabuch@example.net,"949, Saini Path, Gudivada 417436",ICICI Lombard,ET-UF8640,can't wait to get better.
+92,Dhruv,Ranganathan,1959-08-29,male,09443982394,earya@example.org,"788, Sachar Street, Kavali-065891",HDFC ERGO,XP-XE1025,don't know what to do.
+93,Rohan,Bhatt,2004-10-01,male,6987055206,yrajan@example.com,"H.No. 90, Minhas Path, Amroha 153962",Star Health,BD-TB7303,sneezing is a constant annoyance.
+94,Kashish,Bhat,2019-06-21,female,+916936820709,benjamin80@example.org,"39/645, Dalal Zila, Raurkela Industrial Township 517269",Care Health,JS-ZK2299,shiver.
+95,Advika,Varghese,2017-04-30,female,8045637545,atwalpanini@example.com,"H.No. 43, Wable Ganj, Rajahmundry 106296",Care Health,HL-IV3666,I have been waking up at 4am every morning with a headache.
+96,Nihal,Memon,1956-12-11,male,3707833467,amoldutta@example.org,"78/971, Mangat Path, Thanjavur 455849",Care Health,RA-PU7025,my 69-year-old has been diagnosed with cancer.
+97,Oni,Loyal,1956-01-25,female,05570321000,upuri@example.com,"33, Thakur Ganj, Bongaigaon 449184",Niva Bupa,RR-NU7813,crying.
+98,Ranbir,Bhatt,1942-06-11,male,+916781179049,paninimurty@example.net,"59, Chad Ganj, Alappuzha 768450",Star Health,UI-SG3101,shiver
+99,Udant,Sunder,2004-06-17,male,03028871479,abhimanyu45@example.net,"84/16, Bumb Street, Ludhiana 746659",Care Health,LD-LL4422,a headache
+100,Charvi,Shanker,2003-11-21,female,2303657514,dalbir47@example.net,"H.No. 81, Sarraf Chowk, Kakinada-916896",ICICI Lombard,IS-LF9552,is very serious.

@@ -166,7 +166,7 @@ def generate_appointment(appointment_number, total_patients, total_doctors):
     appointment_id = appointment_number
     appointment_date = fake.date_between(start_date="today", end_date="+30d").strftime("%Y-%m-%d")
     appointment_time = f"{random.randint(8, 16):02d}:00"
-    appointment_status = random.choice(["Scheduled", "Completed", "Cancelled"])
+    appointment_status = random.choice(["Scheduled", "Completed"])
     appointment_record = {
         "appointment_id": appointment_id,
         "patient_id": random.randint(1, total_patients),

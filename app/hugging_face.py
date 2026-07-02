@@ -4,144 +4,271 @@ from transformers import (
 )
 import random
 import torch
-MODEL_NAME = "google/flan-t5-base"
+MODEL_NAME = "google/flan-t5-large"
 tokenizer = AutoTokenizer.from_pretrained(
     MODEL_NAME
 )
 model = AutoModelForSeq2SeqLM.from_pretrained(
     MODEL_NAME
 )
+
 model.eval()
-prompts=[
-    
-    # Reception desk
-    "A {age}-year-old {gender} patient walks up to the {department} reception desk and says: I",
-    "At {department} reception, the {gender} patient, age {age}, tells the receptionist: My",
-    "{age}-year-old {gender} patient leans over the {department} counter and says: I have",
-    "A {age}-year-old {gender} approaches {department} reception and says: Since yesterday, I",
-    "{department} reception desk. A {age}-year-old {gender} patient walks in. Patient says:",
-    "At the {department} front desk, a {age}-year-old {gender} tells the staff: I've been",
-    "A {age}-year-old {gender} patient stops at {department} reception. Patient:",
-    "{age}-year-old {gender} patient checks in at {department} reception. My",
-    "At {department} reception, a {age}-year-old {gender} patient explains: I have",
-    "A {age}-year-old {gender} walks into {department} reception and tells the clerk: I've been",
 
-    # Nurse triage
-    "A nurse asks a {age}-year-old {gender} patient in {department} what's wrong. Patient says:",
-    "During triage in {department}, the {gender} patient, age {age}, tells the nurse: I",
-    "{age}-year-old {gender} patient sits with the {department} triage nurse and says: I have",
-    "The {department} nurse asks what brought the {age}-year-old {gender} patient in today. My",
-    "At {department} triage, a {age}-year-old {gender} patient tells the nurse: I've been",
-    "{age}-year-old {gender} patient describes the problem to the {department} nurse: Since yesterday, I",
-    "The triage nurse in {department} listens to the {age}-year-old {gender} patient. Patient:",
-    "A {age}-year-old {gender} patient tells the {department} triage nurse: I have",
-    "{department} triage. The {gender} patient, {age} years old, says: My",
-    "The nurse in {department} asks the {age}-year-old {gender} patient to explain. Patient says:",
+SYMPTOM_DURATION = [
+    "since yesterday",
+    "since this morning",
+    "for two days",
+    "for three days",
+    "for about a week",
+    "for ten days",
+    "for two weeks",
+    "for three weeks",
+    "for a month",
+    "for six weeks",
+    "for two months",
+    "for three months",
+    "for six months",
+    "for almost a year",
+    "on and off for a few months",
+]
+ 
+# {SYMPTOM_SEVERITY}
+SYMPTOM_SEVERITY = [
+    "mild",
+    "moderate",
+    "severe",
+    "occasional",
+    "constant",
+    "unbearable",
+    "manageable",
+    "worsening",
+    "intermittent",
+    "persistent",
+]
+OCCUPATION = [
+    "office worker",
+    "teacher",
+    "construction worker",
+    "nurse",
+    "delivery rider",
+    "student",
+    "software engineer",
+    "farmer",
+    "chef",
+    "shopkeeper",
+    "factory worker",
+    "athlete",
+    "homemaker",
+    "retired government employee",
+    "salesperson",
+    "accountant",
+    "police officer",
+    "long-distance driver",
+]
+ 
+# {BODY_PART}
+BODY_PART = [
+    "lower back",
+    "upper back",
+    "right knee",
+    "left knee",
+    "right shoulder",
+    "left shoulder",
+    "chest",
+    "stomach",
+    "lower abdomen",
+    "right ear",
+    "left ear",
+    "right eye",
+    "left eye",
+    "throat",
+    "neck",
+    "right wrist",
+    "left ankle",
+    "head",
+    "jaw",
+    "right hip",
+    "left elbow",
+    "right foot",
+]
+ 
+# {LIFESTYLE}
+LIFESTYLE = [
+    "sedentary",
+    "very active",
+    "smoking",
+    "heavy drinking",
+    "poor sleep",
+    "high-stress",
+    "frequent traveling",
+    "irregular eating",
+    "night-shift",
+    "vegetarian",
+    "gym-focused",
+    "desk-bound",
+]
+ 
+# {PATIENT_TYPE}
+PATIENT_TYPE = [
+    "new",
+    "returning",
+    "walk-in",
+    "referred",
+    "follow-up",
+    "self-referred",
+    "insurance-covered",
+    "emergency",
+    "routine check-up",
+]
+ 
+# {SEASON}
+SEASON = [
+    "summer",
+    "winter",
+    "monsoon",
+    "spring",
+    "autumn",
+    "rainy season",
+    "flu season",
+    "allergy season",
+]
+ 
+prompts = [
 
-    # Walk-in consultation
-    "A {age}-year-old {gender} walks into {department} for a consultation and tells the doctor: I",
-    "During a walk-in visit to {department}, the {age}-year-old {gender} patient says: I have",
-    "{age}-year-old {gender} patient walks into {department} without an appointment. I've been",
-    "The doctor in {department} greets a {age}-year-old {gender} walk-in patient. Patient says:",
-    "A {age}-year-old {gender} shows up at {department} unannounced and tells the doctor: My",
-    "Walking into {department}, the {age}-year-old {gender} patient tells the doctor: Since yesterday, I",
-    "{age}-year-old {gender} patient takes a seat in {department}. Patient:",
-    "A {age}-year-old {gender} patient enters {department} for a same-day visit and says: I have",
-    "The {department} doctor asks the walk-in {age}-year-old {gender} patient what's wrong. My",
-    "{age}-year-old {gender} patient sits across from the {department} doctor and says: I've been",
+    # Generic
+    "Write one short sentence a patient says to a doctor about a health problem. First person, simple words, no diagnosis, no treatment: I",
+    "Apatient sits down with the doctor and says: I have been",
+    "Write a short, natural, everyday sentence describing a common complaint. No medical terms, no diagnosis: Lately, I",
+    "The doctor asks what's wrong. The patient replies in one plain sentence, no diagnosis: I've been",
 
-    # OPD registration
-    "At {department} OPD registration, a {age}-year-old {gender} patient tells the clerk: I",
-    "{age}-year-old {gender} patient fills out the {department} OPD form and says: I have",
-    "During OPD registration in {department}, the {gender} patient, age {age}, says: My",
-    "A {age}-year-old {gender} patient at {department} OPD tells the registrar: I've been",
-    "{department} OPD desk. A {age}-year-old {gender} patient. Since yesterday, I",
-    "At {department} OPD, a {age}-year-old {gender} patient is asked why they came. Patient says:",
-    "{age}-year-old {gender} patient registers at {department} OPD. Patient:",
-    "A {age}-year-old {gender} patient waits to register at {department} OPD and says: I have",
-    "At {department} OPD registration, the {gender} patient, age {age}, begins: My",
-    "{age}-year-old {gender} patient hands over their {department} OPD slip and says: I've been",
+    # Age-aware
+    "A {AGE}-year-old patient tells the doctor about a problem. One first-person sentence, no diagnosis: I",
+    "The patient, {AGE} years old, opens the visit by saying: My",
+    "Write a natural sentence a {AGE}-year-old might say out loud to a doctor. Simple words, no advice: For the past few days, I",
+    "The nurse asks the {AGE}-year-old patient what's wrong. Patient replies: I",
 
-    # Telephone appointment
-    "A {age}-year-old {gender} calls {department} to book an appointment and says: I",
-    "On the phone with {department}, a {age}-year-old {gender} patient explains: I have",
-    "{age}-year-old {gender} patient calls the {department} clinic and tells the receptionist: I've been",
-    "Calling {department} for an appointment, the {gender} patient, age {age}, says: My",
-    "A {age}-year-old {gender} phones {department} and tells the staff: Since yesterday, I",
-    "{department} clinic gets a call from a {age}-year-old {gender} patient. Patient says:",
-    "On a call to {department}, a {age}-year-old {gender} patient. Patient:",
-    "A {age}-year-old {gender} dials {department} to ask for a slot and says: I have",
-    "Over the phone, a {age}-year-old {gender} patient tells {department} staff: I've been",
-    "{age}-year-old {gender} patient calls {department} and begins: My",
+    # Gender-aware
+    "A {GENDER} patient describes a symptom. One first-person sentence, simple words, no diagnosis: I",
+    "The {GENDER} patient turns to the doctor and says: My",
+    "Write a short, natural complaint a {GENDER} patient might share, no medical terms: Since last week, I",
+    "Asked how they're feeling, the {GENDER} patient answers in one sentence: I've been",
+
+    # Department-aware
+    "A patient visiting {DEPARTMENT} describes a problem typical for that department. One sentence, no diagnosis: I",
+    "At the clinic, the patient tells the doctor: I've been",
+    "Write a one-sentence complaint a patient would bring to {DEPARTMENT}. Simple words, no medical jargon: My",
+    "The patient sits with the specialist in {DEPARTMENT} and says: I have",
+
+    # Severity-aware
+    "A patient describes a {SYMPTOM_SEVERITY} symptom. One first-person sentence, no diagnosis: I have",
+    "The patient tells the nurse the problem is {SYMPTOM_SEVERITY} and says: It",
+    "Write a natural sentence where the patient calls their symptom {SYMPTOM_SEVERITY}, no advice: Lately, my",
+    "Asked how bad it is, the patient says it's {SYMPTOM_SEVERITY} and adds: I",
+
+    # Duration-aware
+    "A patient has had a problem in the {BODY_PART} for {SYMPTOM_DURATION}. One sentence, no diagnosis: I've had",
+    "The patient tells the doctor: For {SYMPTOM_DURATION} now, I",
+    "Write a short complaint mentioning the symptom has lasted {SYMPTOM_DURATION}. Simple words, no advice: My",
+    "The doctor asks how long this has been going on. Patient replies: This has been going on for {SYMPTOM_DURATION}, and",
+
+    # Lifestyle-aware
+    "A patient with a {LIFESTYLE} lifestyle describes a symptom. One sentence, no diagnosis: I",
+    "The patient mentions their {LIFESTYLE} routine and says: My",
+    "Write a natural complaint that fits someone with a {LIFESTYLE} routine, no medical terms: Lately, I",
+    "Asked about their habits, the patient with a {LIFESTYLE} lifestyle says: I",
+
+    # Occupation-aware
+    "A patient who works as a {OCCUPATION} describes a symptom. One sentence, no diagnosis: I",
+    "The patient, a {OCCUPATION}, tells the doctor: My",
+    "Write a natural complaint a {OCCUPATION} might bring to the doctor, simple words: Because of my job, I",
+    "The doctor asks what the patient does for work. The {OCCUPATION} patient replies, then adds: I",
+
+    # Elderly patient
+    "An elderly {AGE}-year-old patient describes a health problem. One sentence, simple words, no diagnosis: I",
+    "The elderly patient sits down slowly and says: Lately, my",
+    "Write a natural complaint an elderly patient in their {AGE}s might say, no advice: These days, I",
+    "The nurse asks the elderly {GENDER} patient how they've been. Patient answers: I've been",
+
+    # Child (spoken by parent)
+    "A parent describes their {AGE}-year-old child's symptom. One sentence spoken by the parent, no diagnosis: My child",
+    "The worried parent tells the pediatrician: For the past few days, my child",
+    "Write a natural sentence a parent says about their child's health, simple words: My {AGE}-year-old has been",
+    "The doctor asks the parent what's wrong with the child. Parent replies: My child keeps",
+
+    # Sports injury
+    "A patient injured while playing sports describes the problem. One sentence, no diagnosis: I hurt my",
+    "The patient tells the doctor: While playing sports, I",
+    "Write a natural complaint about a sports injury to the {BODY_PART}, simple words, no advice: My {BODY_PART}",
+    "Asked what happened, the patient says it was during a game and adds: My {BODY_PART}",
+
+    # Seasonal illness
+    "A patient describes a common {SEASON} illness. One sentence, no diagnosis: I",
+    "The patient tells the doctor: Now that it's {SEASON}, I",
+    "Write a natural complaint typical during {SEASON}, simple words, no advice: Every {SEASON}, I",
+    "The patient blames the {SEASON} weather and says: Ever since it turned {SEASON}, I",
 
     # Follow-up visit
-    "Back in {department} for a follow-up, the {age}-year-old {gender} patient says: I",
-    "{age}-year-old {gender} patient returns to {department} and tells the doctor: I have",
-    "At a {department} follow-up visit, the {gender} patient, age {age}, says: I've been",
-    "A {age}-year-old {gender} patient comes back to {department} and says: Since yesterday, I",
-    "During a {department} check-up, the {age}-year-old {gender} patient mentions: My",
-    "{age}-year-old {gender} patient at a {department} follow-up appointment. Patient:",
-    "Returning to {department}, a {age}-year-old {gender} patient tells the nurse: I",
-    "A {age}-year-old {gender} patient back in {department} this week says: I have",
-    "At the {department} follow-up, the {gender} patient, age {age}, begins: I've been",
-    "{age}-year-old {gender} patient revisits {department} and tells the doctor: My",
+    "A patient returning for a follow-up describes how they feel now. One sentence, no diagnosis: Since my last visit, I",
+    "The patient at a follow-up appointment tells the doctor: I'm back because",
+    "Write a short, natural update a patient gives at a follow-up, simple words: My symptom",
+    "The doctor asks if things have improved. The patient replies: It's",
 
-    # New patient visit
-    "A new {age}-year-old {gender} patient at {department} tells the doctor: I",
-    "On their first {department} visit, the {age}-year-old {gender} patient says: I have",
-    "{age}-year-old {gender} patient, new to {department}, tells the staff: I've been",
-    "A first-time {department} patient, age {age}, {gender}, says: Since yesterday, I",
-    "{department} welcomes a new {age}-year-old {gender} patient. Patient says:",
-    "On a first visit to {department}, a {age}-year-old {gender} patient. Patient:",
-    "A new patient in {department}, {age} years old, {gender}, says: I have",
-    "{age}-year-old {gender} patient, visiting {department} for the first time, says: I've been",
-    "A first-time {gender} patient, age {age}, at {department} tells the doctor: My",
-    "New to {department}, a {age}-year-old {gender} patient explains: Since yesterday, I",
+    # Chronic symptom
+    "A patient describes a symptom that keeps coming back. One sentence, no diagnosis: I keep getting",
+    "The patient tells the doctor: Every few weeks, I",
+    "Write a natural complaint about a long-lasting, recurring symptom, simple words: On and off for a while now, I",
+    "Asked if this has happened before, the patient says: Yes, this keeps happening, and",
 
-    # Emergency arrival
-    "A {age}-year-old {gender} patient rushed into {department} says: I",
-    "Brought into {department} urgently, the {age}-year-old {gender} patient says: I have",
-    "{age}-year-old {gender} patient arrives at {department} in distress and says: I've been",
-    "Rushed to {department}, a {age}-year-old {gender} patient tells the doctor: My",
-    "An emergency case in {department}, the {gender} patient, age {age}, says: Since yesterday, I",
-    "{department} emergency entrance. A {age}-year-old {gender} patient arrives. Patient says:",
-    "A {age}-year-old {gender} patient brought into {department} urgently. Patient:",
-    "Arriving at {department} in a hurry, the {age}-year-old {gender} patient says: I have",
-    "{age}-year-old {gender} patient rushed to {department} tells the staff: I've been",
-    "An urgent {department} case, the {gender} patient, age {age}, begins: My",
+    # Sudden symptom
+    "A patient describes a symptom that started suddenly. One sentence, no diagnosis: Suddenly, I",
+    "The patient tells the doctor: Out of nowhere, I",
+    "Write a natural complaint about a symptom that came on all at once, simple words: It happened all of a sudden, and",
+    "Asked when it started, the patient says: Just this morning, I",
 
-    # Conversation starter
-    "A {age}-year-old {gender} patient in {department} starts the conversation: I",
-    "{age}-year-old {gender} patient turns to the {department} doctor and says: I have",
-    "Starting the visit in {department}, the {gender} patient, age {age}, says: I've been",
-    "A {age}-year-old {gender} patient breaks the ice in {department} by saying: My",
-    "{age}-year-old {gender} patient opens up in {department} and says: Since yesterday, I",
-    "In {department}, a {age}-year-old {gender} patient is asked to explain. Patient says:",
-    "A {age}-year-old {gender} patient starts off in {department}. Patient:",
-    "{age}-year-old {gender} patient kicks off the {department} visit and says: I have",
-    "Beginning the {department} appointment, the {gender} patient, age {age}, says: I've been",
-    "A {age}-year-old {gender} patient opens the conversation in {department}: My",
+    # Mild symptom
+    "A patient describes a mild, minor symptom. One sentence, no diagnosis: I have a slight",
+    "The patient shrugs and tells the doctor: It's not too bad, but I",
+    "Write a natural complaint about a mild symptom that isn't very concerning, simple words: Just a bit of",
+    "Asked how they're feeling, the patient says: Nothing serious, but my",
 
-    # Patient introduction
-    "Introducing themselves in {department}, a {age}-year-old {gender} patient says: I",
-    "A {age}-year-old {gender} patient introduces their visit to {department} and says: I have",
-    "{age}-year-old {gender} patient, here for {department}, says: I've been",
-    "A {age}-year-old {gender} patient steps into {department} and introduces the problem: My",
-    "Meeting the {department} doctor, a {age}-year-old {gender} patient says: Since yesterday, I",
-    "{department} visit begins. The {age}-year-old {gender} patient enters. Patient says:",
-    "A {age}-year-old {gender} patient greets the {department} doctor. Patient:",
-    "{age}-year-old {gender} patient meets the {department} team and says: I have",
-    "Introducing the visit, a {age}-year-old {gender} patient in {department} says: I've been",
-    "A {age}-year-old {gender} patient sits down in {department} and says: My",
+    # Moderate symptom
+    "A patient describes a moderate symptom that's starting to bother them. One sentence, no diagnosis: I",
+    "The patient tells the doctor: It's uncomfortable and I",
+    "Write a natural complaint about a moderate symptom that's hard to ignore, simple words: It's not unbearable, but my",
+    "Asked how bad it is, the patient says: It's noticeable now, and",
+
+    # Severe symptom
+    "A patient describes a severe symptom that's hard to bear. One sentence, no diagnosis: I have severe",
+    "The patient tells the doctor: The pain is so bad that I",
+    "Write a natural complaint about a severe symptom, simple words, no advice: My {BODY_PART}",
+    "Visibly in pain, the patient tells the doctor: I can barely",
+
+    # Emergency-like (without diagnosis)
+    "A patient rushed in urgently describes what's wrong. One sentence, no diagnosis: I suddenly",
+    "The patient, clearly in distress, tells the doctor: Right now, I",
+    "Write a short, urgent-sounding complaint a patient says in an emergency, no diagnosis, no advice: I can't",
+    "Rushed into {DEPARTMENT}, the patient gasps: It started a few minutes ago and I",
+
+    # Multi-symptom (maximum two symptoms)
+    "A patient describes two symptoms together in one sentence, no diagnosis, no more than two symptoms: I have",
+    "The patient tells the doctor: For the past {SYMPTOM_DURATION}, I've had",
+    "Write a natural complaint mentioning exactly two symptoms, simple words, no diagnosis: Along with the pain, I've also had",
+    "Asked if anything else is bothering them, the patient adds: My {BODY_PART} and",
 
 ]
 departments = ["Cardiology", "Neurology", "Orthopedics", "Pediatrics", "Dermatology", "Gastroenterology", "Oncology", "Ophthalmology", "Psychiatry", "Urology"]
    
 def generate_complaint(age, gender):
     prompt = prompts[random.randint(0, len(prompts) - 1)].format(
-        age=age,
-        gender=gender,
-        department=departments[random.randint(0, len(departments) - 1)]
+        AGE=age,
+        GENDER=gender,
+        DEPARTMENT=random.choice(departments),
+        SYMPTOM_DURATION=random.choice(SYMPTOM_DURATION),
+        BODY_PART=random.choice(BODY_PART),
+        SYMPTOM_SEVERITY=random.choice(SYMPTOM_SEVERITY),
+        LIFESTYLE=random.choice(LIFESTYLE),
+        OCCUPATION=random.choice(OCCUPATION),
+        SEASON=random.choice(SEASON)
     )
 
 
@@ -155,7 +282,7 @@ def generate_complaint(age, gender):
             max_new_tokens=50,
             do_sample=True,
             early_stopping=True,
-            temperature=0.8,
+            temperature=0.2,
             top_k=50,
             top_p=0.95
 )

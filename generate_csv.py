@@ -59,3 +59,6 @@ with open("data/appointments.csv","w",newline="",encoding="utf-8") as file:
     writer.writerows(appointments)
     
 
+if __name__ == "__main__":
+    
+    print("CSV files generated successfully.")

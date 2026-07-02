@@ -1,11 +1,10 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+import csv
 
-MODEL_NAME = "google/flan-t5-base"
+with open("data/doctors_schedules.csv", "r", encoding="utf-8") as f:
+    reader = csv.reader(f)
+    rows = list(reader)
 
-print("Loading tokenizer...")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+print("Number of rows:", len(rows))
 
-print("Loading model...")
-model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
-
-print("Model loaded successfully!")
+for row in rows[:5]:
+    print(row)

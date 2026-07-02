@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import datetime
 DATABASE_NAME = "hospital_records.db"
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
@@ -99,8 +100,7 @@ def doctor_exists(doctor_id):
     cursor.execute(
         """
         SELECT
-            doctor_id,
-            is_available
+            doctor_id
         FROM doctor_records
         WHERE doctor_id = ?
         LIMIT 1
@@ -204,7 +204,7 @@ def get_weekday_slots(doctor_id, day_of_week):
     if not schedule:
         conn.close()
         return []
-
+    
     start_time = schedule["start_time"]
     end_time = schedule["end_time"]
     duration_minutes = schedule["duration_minutes"]
@@ -219,10 +219,12 @@ def get_weekday_slots(doctor_id, day_of_week):
         slot_end = f"{(current_time_minutes + duration_minutes) // 60:02}:{(current_time_minutes + duration_minutes) % 60:02}"
         slots.append({"start_time": slot_start, "end_time": slot_end})
         current_time_minutes += duration_minutes
+    conn.close()
     return slots
 
-def get_available_doctor_slots(specialty, date):
-    day = date.strftime("%A")  
+def get_available_doctor_slots(department, date):
+    appointment_date = datetime.strptime(date, "%Y-%m-%d").date()
+    day = appointment_date.strftime("%A")
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
@@ -235,9 +237,9 @@ def get_available_doctor_slots(specialty, date):
     FROM doctor_records d
     JOIN doctor_schedule s
     ON d.doctor_id = s.doctor_id
-    WHERE d.specialty = ?
+    WHERE d.department = ?
     AND s.day_of_week = ?
-        """, (specialty, day))
+        """, (department, day))
     doctors = cursor.fetchall()
 
     doc_slots = []
@@ -249,7 +251,7 @@ def get_available_doctor_slots(specialty, date):
             SELECT appointment_time
             FROM appointment_records
             WHERE doctor_id = ? AND appointment_date = ?
-        """, (doctor_id, date.strftime("%Y-%m-%d")))
+        """, (doctor_id,appointment_date.isoformat()))
         appointments = cursor.fetchall()
         available_slots = slots.copy()  
 
@@ -267,14 +269,16 @@ def get_available_doctor_slots(specialty, date):
              "doctor_id": doctor["doctor_id"],
              "doc_name": doctor["doc_name"],
              "available_slots": slot_list
-} 
-        doc_slots.append(doctor_data)
+}       
+        if slot_list:  # Only add doctors with available slots
+            doc_slots.append(doctor_data)
     conn.close()        
     return doc_slots
-def doc_is_available(doctor_id, date, time):
-    day = date.strftime("%A")  
+def doc_is_available(doctor_id, date_, time_):
+    appointment_date = datetime.strptime(date_,"%Y-%m-%d").date()
+    day = appointment_date.strftime("%A")  
     slots = get_weekday_slots(doctor_id, day)
-    if not any(slot["start_time"] == time for slot in slots):
+    if not any(slot["start_time"] == time_ for slot in slots):
         return False
     conn = get_connection()
     cursor = conn.cursor()
@@ -282,9 +286,15 @@ def doc_is_available(doctor_id, date, time):
         SELECT appointment_id
         FROM appointment_records
         WHERE doctor_id = ? AND appointment_date = ? AND appointment_time = ?
-    """, (doctor_id, date.strftime("%Y-%m-%d"), time))
+    """, (doctor_id, appointment_date.isoformat(), time_))
     appointment = cursor.fetchone()
     conn.close()
     if appointment:
         return False
     return True
+if __name__ == "__main__":
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM doctor_schedule WHERE doctor_id = ? AND day_of_week = ?", (4, "Wednesday"))
+    conn.commit()
+    conn.close()

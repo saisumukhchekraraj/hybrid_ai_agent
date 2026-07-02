@@ -1,5 +1,6 @@
 import csv
 from app.database.sqlite import get_connection,create_tables
+
 create_tables()
 
 def import_patients():
@@ -125,4 +126,5 @@ if __name__ == "__main__":
     import_patients()
     import_doctors()
     import_appointments()
+    import_doctor_schedules()
     print("Data imported successfully.")

@@ -3,7 +3,6 @@ DATABASE_NAME = "hospital_records.db"
 from app.database.sqlite_patients import patient_exists
 from app.database.sqlite_docs import doctor_exists
 from app.database.sqlite_docs import doc_is_available
-from datetime import datetime
 def get_connection():
     conn = sqlite3.connect(DATABASE_NAME)
     conn.row_factory = sqlite3.Row
@@ -15,8 +14,6 @@ def book_appointment(
     appointment_time
 ):
     
-    appointment_time = datetime.strptime(appointment_time, "%H:%M").strftime("%H:%M")
-
     if not patient_exists(patient_id):
         return {
             "success": False,
@@ -54,7 +51,7 @@ def book_appointment(
     (
         patient_id,
         doctor_id,
-        appointment_date.isoformat(),
+        appointment_date,
         appointment_time,
         "Scheduled"
     )
