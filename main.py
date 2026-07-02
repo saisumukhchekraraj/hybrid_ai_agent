@@ -34,11 +34,13 @@ class NewPatient(BaseModel):
     last_name: str
     dob: str
     gender: str
-    phone: str
-    email: str
-    address: str
-    insurance_company: str
-    insurance_id: str
+
+    phone: str | None = None
+    email: str | None = None
+    address: str | None = None
+    insurance_company: str | None = None
+    insurance_id: str | None = None
+    complaint: str | None = None
 
 class UpdatePatient(BaseModel):
     patient_id: int
@@ -126,7 +128,8 @@ def create_patient_route(request: NewPatient):
         email=request.email,
         address=request.address,
         insurance_company=request.insurance_company,
-        insurance_id=request.insurance_id
+        insurance_id=request.insurance_id,
+        complaint=request.complaint
     )
 
     return {

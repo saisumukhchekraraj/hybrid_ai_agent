@@ -31,46 +31,47 @@ def insert_patient(
     last_name,
     dob,
     gender,
-    phone,
-    email,
-    address,
-    insurance_company,
-    insurance_id
+    phone=None,
+    email=None,
+    address=None,
+    insurance_company=None,
+    insurance_id=None,
+    complaint=None,
 ): 
-   patient_id = find_patient(first_name, last_name, dob)
-
-   if patient_id:
-    return patient_id
-   else:
-    conn= get_connection()
-    cursor=conn.cursor()
-    cursor.execute("""
-       INSERT  INTO patient_records
-    (
-        first_name,
-        last_name,
-        dob,
-        gender,
-        phone,
-        email,
-        address,
-        insurance_company,
-        insurance_id
+ patient_id = find_patient(first_name, last_name, dob)
+ if patient_id is not None:
+        raise ValueError("Patient already exists in the database.")
+ else:
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        INSERT INTO patient_records (
+            first_name,
+            last_name,
+            dob,
+            gender,
+            phone,
+            email,
+            address,
+            insurance_company,
+            insurance_id,
+            patient_complaint
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            first_name,
+            last_name,
+            dob,
+            gender,
+            phone,
+            email,
+            address,
+            insurance_company,
+            insurance_id,
+            complaint
+        )
     )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """,
-    (
-        first_name,
-        last_name,
-        dob,
-        gender,
-        phone,
-        email,
-        address,
-        insurance_company,
-        insurance_id
-    )
-)
     conn.commit()
     patient_id = cursor.lastrowid
     conn.close()
