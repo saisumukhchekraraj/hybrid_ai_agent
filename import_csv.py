@@ -1,5 +1,6 @@
 import csv
 from app.database.sqlite import get_connection,create_tables
+
 create_tables()
 
 def import_patients():
@@ -25,12 +26,13 @@ def import_patients():
                 email,
                 address,
                 insurance_company,
-                insurance_id
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                insurance_id,
+                patient_complaint
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
         (row["patient_id"],row["first_name"],row["last_name"],
          row["dob"],row["gender"],row["phone"],row["email"],
-         row["address"],row["insurance_company"],row["insurance_id"]
+         row["address"],row["insurance_company"],row["insurance_id"],row["patient_complaint"]
 ) )
     conn.commit()
     conn.close()
@@ -44,7 +46,6 @@ def import_doctors():
     ) as file:
         reader = csv.DictReader(file)
         for row in reader:
-            is_available = row["is_available"].strip().lower() == "true"
             cursor.execute(
                 """
                 INSERT INTO doctor_records (
@@ -52,16 +53,50 @@ def import_doctors():
                     doc_name,
                     department,
                     specialty,
-                    day_of_week,
-                    time_slot,
-                    is_available
+                    qualifications,
+                    phone,
+                    email
                 ) VALUES (?,?, ?, ?, ?, ?, ?)
                 """,
                 (row["doctor_id"],row["doc_name"], row["department"], row["specialty"],
-                 row["day_of_week"], row["time_slot"], is_available)
+                 row["qualifications"], row["phone"], row["email"])
             )
         conn.commit()
         conn.close()
+def import_doctor_schedules():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    with open(
+        "data/doctors_schedules.csv",
+        "r",
+        encoding="utf-8"
+    ) as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+            cursor.execute(
+                """
+                INSERT INTO doctor_schedule (
+                    doctor_id,
+                    day_of_week,
+                    start_time,
+                    end_time,
+                    duration_minutes
+                )
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (
+                    row["doctor_id"],
+                    row["day_of_week"],
+                    row["start_time"],
+                    row["end_time"],
+                    row["duration_minutes"]
+                )
+            )
+
+    conn.commit()
+    conn.close()
 def import_appointments():
     conn = get_connection()
     cursor = conn.cursor()
@@ -91,4 +126,5 @@ if __name__ == "__main__":
     import_patients()
     import_doctors()
     import_appointments()
+    import_doctor_schedules()
     print("Data imported successfully.")
