@@ -1,5 +1,5 @@
 from app.orchestrator.graph import graph
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
 
 state = {
     "messages": [],
@@ -19,16 +19,29 @@ while True:
     user_input = input("You: ")
 
     if user_input.lower() == "exit":
-        break
+       print("\n========== FINAL AGENT STATE ==========\n")
+
+       for key, value in state.items():
+        print(f"{key}:")
+        print(value)
+        print()
+
+       break
 
     state["messages"].append(
         HumanMessage(content=user_input)
     )
 
     state = graph.invoke(state)
-
+    print("\n========== AGENT STATE ==========")
+    print(f"Patient Status      : {state['patient_status']}")
+    print(f"Required Duration   : {state['required_duration']}")
+    print(f"Booking Confirmed   : {state['booking_confirmed']}")
+    print("=================================\n")
     last_message = state["messages"][-1]
-
+    print(last_message)
+    print(type(last_message))
+    print(last_message.__dict__)
     if isinstance(last_message, AIMessage):
 
         # Gemini responses can be plain strings or structured content.

@@ -6,12 +6,13 @@ from langchain_core.messages import BaseMessage
 class AgentState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
 
+    patient_id: int | None
     patient_status: str | None
-    required_duration: int | None
-    booking_confirmed: bool
 
-    department: str | None
+    required_duration: int | None
+
     appointment_date: str | None
+
     available_slots: list[dict]
 
-    patient_id: int | None
+    booking_confirmed: bool
