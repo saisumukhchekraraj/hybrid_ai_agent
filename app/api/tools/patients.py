@@ -45,13 +45,14 @@ Never use this tool to update an existing patient.
     response.raise_for_status()
     return response.json()
 @tool
-def get_doctor_availability(department: str, appointment_date: str):
+def get_doctor_availability(department: str, appointment_date: str , duration: int | None = None):
     """ Call this tool to get the available doctor slots for a specific department on a given date."""
     response = requests.post(
     "http://127.0.0.1:8000/doctors/availability",
     json={
         "department": department,
-        "appointment_date": appointment_date
+        "appointment_date": appointment_date,
+        "duration": duration
     },timeout=10)
     response.raise_for_status()
     return response.json()

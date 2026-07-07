@@ -222,24 +222,41 @@ def get_weekday_slots(doctor_id, day_of_week):
     conn.close()
     return slots
 
-def get_available_doctor_slots(department, date):
+def get_available_doctor_slots(department, date , duration=None):
     appointment_date = datetime.strptime(date, "%Y-%m-%d").date()
     day = appointment_date.strftime("%A")
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute("""
-    SELECT
-    d.doctor_id,
-    d.doc_name,
-    s.start_time,
-    s.end_time,
-    s.duration_minutes
-    FROM doctor_records d
-    JOIN doctor_schedule s
-    ON d.doctor_id = s.doctor_id
-    WHERE d.department = ?
-    AND s.day_of_week = ?
+    if duration is not None:
+        cursor.execute("""
+            SELECT
+            d.doctor_id,
+            d.doc_name,
+            s.start_time,
+            s.end_time,
+            s.duration_minutes
+            FROM doctor_records d
+            JOIN doctor_schedule s
+            ON d.doctor_id = s.doctor_id
+            WHERE d.department = ?
+            AND s.day_of_week = ?
+            AND s.duration_minutes = ?
+        """, (department, day, duration))
+    else:
+        cursor.execute("""
+            SELECT
+            d.doctor_id,
+            d.doc_name,
+            s.start_time,
+            s.end_time,
+            s.duration_minutes
+            FROM doctor_records d
+            JOIN doctor_schedule s
+            ON d.doctor_id = s.doctor_id
+            WHERE d.department = ?
+            AND s.day_of_week = ?
         """, (department, day))
+   
     doctors = cursor.fetchall()
 
     doc_slots = []

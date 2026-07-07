@@ -77,6 +77,7 @@ class UpdateDoctorSchedule(BaseModel):
 class DoctorAvailabilityRequest(BaseModel):
     department: str
     appointment_date: str
+    duration: int | None = None  
     
 class BookAppointmentRequest(BaseModel):
     patient_id: int
@@ -248,7 +249,8 @@ def doctor_availability_route(request: DoctorAvailabilityRequest):
 
     return get_available_doctor_slots(
         department=request.department,
-        date=request.appointment_date
+        date=request.appointment_date,
+        duration=request.duration
     )
 
 #-------------------
