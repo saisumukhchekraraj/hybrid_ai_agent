@@ -83,7 +83,7 @@ doctor_qualifications = [
     "MBBS, MD (Microbiology)",
     "MBBS, MD (Community Medicine)"
 ]
-DURATIONS = [15, 20, 30, 45]
+DURATIONS = [30,60]
 def generate_patient(patient_number): 
     """Generates a random patient record."""
     
