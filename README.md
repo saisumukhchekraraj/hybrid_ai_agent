@@ -43,6 +43,24 @@ hybrid_ai_agent/
 │   │   ├── graph.py                     # LangGraph workflow
 │   │   ├── nodes.py                     # Workflow nodes
 │   │   └── state.py                     # AgentState definition
+│   │   ├── __init__.py
+│   │   ├── patients.py              # Patient API routes
+│   │   ├── doctors.py               # Doctor API routes
+│   │   ├── appointments.py          # Appointment API routes
+│   │   └── tools.py                 # LangChain tool wrappers
+│   │
+│   ├── classifier/
+│   │   └── __init__.py              # Reserved for local intent classifier
+│   │
+│   ├── database/
+│   │   ├── __init__.py
+│   │   ├── sqlite.py                # Database initialization
+│   │   ├── sqlite_patients.py       # Patient database operations
+│   │   ├── sqlite_docs.py           # Doctor database operations
+│   │   └── sqlite_appointments.py   # Appointment database operations
+│   │
+│   ├── orchestrator/
+│   │   └── __init__.py              # Agent orchestration
 │   │
 │   ├── ui/
 │   │   ├── __init__.py
@@ -52,6 +70,10 @@ hybrid_ai_agent/
 │   └── crud_demo/
 │       ├── chat_db.py
 │       └── crud_demo.py
+│   ├── data_generator.py            # Synthetic hospital dataset generator
+│   ├── hugging_face.py              # Local model experiments
+│   ├── langchain_agent.py           # LangChain + Gemini agent
+│   └── llm.py                       # Gemini LLM configuration
 │
 ├── data/
 │   ├── patients.csv
@@ -66,6 +88,16 @@ hybrid_ai_agent/
 ├── import_csv.py
 ├── main.py
 ├── tests.py                            # Interactive LangGraph terminal agent
+│   ├── appointments.csv
+│   └── hospital_records.db
+│
+├── images/
+│
+├── tests/
+│
+├── generate_csv.py
+├── import_csv.py
+├── main.py                          # FastAPI entry point
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
