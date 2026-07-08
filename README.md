@@ -2,7 +2,6 @@
 
 A production-oriented **Hybrid Intelligent Healthcare Agent** that combines:
 
-- Local ML Intent Classification *(coming in later phases)*
 - Google Gemini for natural language reasoning
 - LangChain for tool integration
 - LangGraph for workflow orchestration and agent state management
@@ -116,7 +115,55 @@ hybrid_ai_agent/
 `POST /appointments/book`
 
 ---
+## 📌 API Endpoints
 
+### Patient Lookup
+
+`POST /patients/lookup`
+
+**Input**
+
+![Patient Lookup Input](images/patients_lookup_input.png)
+
+**Output**
+
+![Patient Lookup Output](images/patients_lookup_output.png)
+
+---
+
+### Doctor Availability
+
+`POST /doctors/availability`
+
+**Input**
+
+![Doctor Input](images/docs_input.png)
+
+**Output**
+
+![Doctor Output](images/docs_output.png)
+
+---
+
+### Appointment Booking
+
+`POST /appointments/book`
+
+**Successful Booking**
+
+**Input**
+
+![Appointment Input](images/appoint_1_input.png)
+
+**Output**
+
+![Appointment Output](images/appoint_1_output.png)
+
+**Invalid Booking**
+
+![Invalid Booking](images/booking_appointment_2.png)
+
+---
 # ✅ Phase 2 — AI Agent Integration
 
 Phase 2 transformed the backend into an AI-powered assistant.
