@@ -57,7 +57,7 @@ def get_doctor_availability(department: str, appointment_date: str , duration: i
     response.raise_for_status()
     return response.json()
 @tool
-def book_appointment(patient_id: int, doctor_id: int, appointment_date: str, appointment_time: str):
+def book_appointment(patient_id: int, doctor_id: int, appointment_date: str, appointment_time: str ):
     """ Call this tool to book an appointment for a patient with a specific doctor on a given date and time.
     Always check doctor availability before booking an appointment.
     Always check if the patient exists before booking an appointment.

@@ -21,6 +21,21 @@ hybrid_ai_agent/
 ├── app/
 │   │
 │   ├── api/
+│   │   ├── __init__.py
+│   │   ├── language_chain.py          # Gemini + LangChain configuration
+│   │   ├── appointments.py            # Appointment API routes
+│   │   ├── doctors.py                 # Doctor API routes
+│   │   ├── patients.py                # Patient API routes
+│   │   └── tools/
+│   │       ├── __init__.py
+│   │       └── patients.py            # LangChain tool wrappers
+│   │
+│   ├── automation/
+│   │   ├── __init__.py
+│   │   └── booking_excel.py           # Excel export & email automation
+│   │
+│   ├── classifier/
+│   │   └── __init__.py                # Reserved for local ML intent classifier
 │   │   ├── tools/
 │   │   │   ├── __init__.py
 │   │   │   └── patients.py              # LangChain tool wrappers
@@ -40,6 +55,20 @@ hybrid_ai_agent/
 │   │
 │   ├── orchestrator/
 │   │   ├── __init__.py
+│   │   ├── graph.py                   # LangGraph workflow
+│   │   ├── nodes.py                   # Workflow nodes
+│   │   └── state.py                   # AgentState definition
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── agent_services.py          # Streamlit ↔ LangGraph bridge
+│   │
+│   └── ui/
+│       ├── __init__.py
+│       ├── components.py              # UI components
+│       ├── states.py                  # Streamlit session management
+│       ├── styles.py                  # Custom styling
+│       └── assets/
 │   │   ├── graph.py                     # LangGraph workflow
 │   │   ├── nodes.py                     # Workflow nodes
 │   │   └── state.py                     # AgentState definition
@@ -80,6 +109,17 @@ hybrid_ai_agent/
 │   ├── doctors.csv
 │   ├── doctors_schedules.csv
 │   └── appointments.csv
+│
+├── images/
+│
+├── tests/
+│
+├── hospital_records.db
+├── admin_review_report.xlsx
+├── generate_csv.py
+├── import_csv.py
+├── main.py                            # FastAPI application
+├── st_app.py                          # Streamlit application
 │
 ├── images/
 │
@@ -446,3 +486,53 @@ Supports
 
 ---
 
+# ✅ Phase 4 — Streamlit Frontend & Workflow Automation
+
+Phase 4 introduces a complete graphical user interface and post-booking automation, transforming the project from a terminal-based AI agent into an end-to-end healthcare application.
+
+---
+
+## Streamlit Frontend
+
+A modern chat-based interface was developed using Streamlit.
+
+### Features
+
+- Interactive chat interface
+- Multi-turn conversations
+- Session state management
+- Email-based user onboarding
+- Loading indicators
+- Conversation history
+
+---
+
+## LangGraph Integration
+
+The Streamlit frontend is fully integrated with the existing LangGraph workflow, allowing users to interact with the AI agent through a graphical interface while preserving the complete backend workflow.
+
+---
+
+## Booking Automation
+
+A dedicated automation module was introduced to execute administrative tasks after successful appointment booking.
+
+### Implemented Features
+
+- Automatic Excel report generation (`admin_review_report.xlsx`)
+- Dummy patient intake email simulation
+- Modular post-booking automation pipeline
+
+---
+
+## Phase 4 Features
+
+- Streamlit graphical interface
+- Streamlit ↔ LangGraph integration
+- Session management
+- Email-based user authentication
+- Automated Excel report generation
+- Dummy email automation
+- End-to-end AI appointment booking through the UI
+
+---

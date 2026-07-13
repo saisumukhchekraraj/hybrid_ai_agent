@@ -8,11 +8,11 @@ class AgentState(TypedDict):
 
     patient_id: int | None
     patient_status: str | None
-
+    email: str | None
     required_duration: int | None
 
     appointment_date: str | None
 
     available_slots: list[dict]
-
+    appointment_id: int | None
     booking_confirmed: bool
