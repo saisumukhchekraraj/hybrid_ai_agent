@@ -1,27 +1,31 @@
 import json
+
 from app.api.tools.patients import book_appointment, lookup_patient
 from app.orchestrator.state import AgentState
 from app.api.tools.patients import get_doctor_availability
 from app.api.language_chain import llm_with_tools
-from langchain_core.messages import AIMessage , ToolMessage
-from langgraph.prebuilt import ToolNode
+from langchain_core.messages import AIMessage, ToolMessage
 
-from hybrid_ai_agent.app.orchestrator import state
+
 def duration_node(state: AgentState):
     """
-    Determine the required duration for the appointment based on the patient's status. 
+    Determine the required duration for the appointment based on the patient's status.
     """
-    if state["patient_status"] == "new":
+    patient_status = state.get("patient_status")
+
+    if patient_status == "new":
         return {
             "required_duration": 60
         }
 
-    if state["patient_status"] == "returning":
+    if patient_status == "returning":
         return {
             "required_duration": 30
         }
 
     return {}
+
+
 def lookup_patient_node(state: AgentState) -> dict:
     """
     Look up the patient in the database and update
@@ -34,8 +38,8 @@ def lookup_patient_node(state: AgentState) -> dict:
             "dob": "2006-05-11"
         }
     )
-    state["patient_status"] = result["patient_status"]
-    if result["patient_status"] == "returning":
+    state["patient_status"] = result["status"]
+    if result["status"] == "returning":
         state["patient_id"] = result["patient_id"]
     return {
         "patient_status": result["status"]
@@ -50,9 +54,9 @@ def availability_node(state: AgentState) -> dict:
 
     result = get_doctor_availability.invoke(
         {
-            "department": state["department"],
-            "appointment_date": state["appointment_date"],
-            "duration": state["required_duration"]
+            "department": state.get("department"),
+            "appointment_date": state.get("appointment_date"),
+            "duration": state.get("required_duration")
         }
     )
 
@@ -60,13 +64,15 @@ def availability_node(state: AgentState) -> dict:
         "available_slots": result
     }
 
-def llm_response(state: AgentState) :
+
+def llm_response(state: AgentState):
     """
     Simulate an LLM response for testing purposes.
     In a real-world scenario, this function would call an actual LLM API.
     """
     response = llm_with_tools.invoke(state["messages"])
-    return {"messages": [response]} 
+    return {"messages": [response]}
+
 
 def update_workflow_state(state: AgentState):
     """
@@ -94,7 +100,13 @@ def update_workflow_state(state: AgentState):
         return {}
 
     tool_name = last_tool_message.name
-    tool_output = json.loads(last_tool_message.content)
+    content = last_tool_message.content
+
+    tool_output = (
+        json.loads(content)
+        if isinstance(content, str)
+        else content
+    )
     tool_args = {}
 
     if last_ai_message:
@@ -103,13 +115,12 @@ def update_workflow_state(state: AgentState):
     print(f"Tool Name   : {tool_name}")
     print(f"Tool Output : {tool_output}")
 
-
     if tool_name == "lookup_patient":
         if tool_output.get("status") == "returning":
-         return {
-            "patient_status": tool_output.get("status"),
-            "patient_id": tool_output.get("patient_id"),
-        }
+            return {
+                "patient_status": tool_output.get("status"),
+                "patient_id": tool_output.get("patient_id"),
+            }
         else:
             return {
                 "patient_status": tool_output.get("status"),
@@ -126,14 +137,13 @@ def update_workflow_state(state: AgentState):
     elif tool_name == "get_doctor_availability":
 
         return {
-        "appointment_date": tool_args.get("appointment_date"),
-        "available_slots": tool_output,
-    }
+            "appointment_date": tool_args.get("appointment_date"),
+            "available_slots": tool_output,
+        }
     elif tool_name == "book_appointment":
 
         return {
-        "booking_confirmed": tool_output.get("success", False),
-        "appointment_id": tool_output.get("appointment_id")
-    }
+            "booking_confirmed": tool_output.get("success", False),
+            "appointment_id": tool_output.get("appointment_id")
+        }
     return {}
-
