@@ -141,9 +141,13 @@ def update_workflow_state(state: AgentState):
             "available_slots": tool_output,
         }
     elif tool_name == "book_appointment":
+        from app.email_automation.booking_excel import process_booking
+        updated_state = {**state,
+                        "booking_confirmed": tool_output.get("success", False),
+                        "appointment_id": tool_output.get("appointment_id"),
+                        }
 
-        return {
-            "booking_confirmed": tool_output.get("success", False),
-            "appointment_id": tool_output.get("appointment_id")
-        }
-    return {}
+        if updated_state["booking_confirmed"]:
+         process_booking(updated_state["appointment_id"])
+
+        return updated_state

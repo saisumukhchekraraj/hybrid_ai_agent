@@ -9,6 +9,29 @@ st.set_page_config(
     layout="wide"
 )
 initialize_session()
+if st.session_state.user_email is None:
+
+    st.title("🏥 Hybrid AI Hospital Assistant")
+
+    st.subheader("Patient Authentication")
+
+    email = st.text_input(
+        "Enter your email address"
+    )
+
+    if st.button("Continue"):
+
+        if "@" not in email or "." not in email:
+
+            st.error("Please enter a valid email address.")
+
+        else:
+
+            st.session_state.user_email = email
+
+            st.rerun()
+
+    st.stop()
 render_header(
     title="🏥 Hybrid AI Hospital Assistant",
     description="Book appointments, check doctor availability and manage patient records."
