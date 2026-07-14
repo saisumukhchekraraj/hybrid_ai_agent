@@ -66,3 +66,7 @@ temp/
 # Data Files (if large)
 data/raw/
 data/processed/
+
+#Excel files 
+*.xlsx
+
